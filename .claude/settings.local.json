@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\AI\" -Directory -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "Bash(ls -la \"D:\\\\AI\\\\\" 2>/dev/null | head -30)",
+      "Bash(find \"D:/AI\" -maxdepth 2 -type d -name \"01_Products\" -o -name \"04_Data\" -o -name \"Taomeettrap\" 2>/dev/null)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(del \"D:\\\\AI\\\\website\\\\src\\\\components\\\\ui\\\\ProductMockup.tsx\")",
+      "WebFetch(domain:adsflow-chidu.com)",
+      "WebFetch(domain:ocvideoai.com)",
+      "Bash(mkdir -p \"D:\\\\AI\\\\website\\\\src\\\\app\\\\products\\\\[id]\" 2>&1; mkdir -p \"D:\\\\AI\\\\website\\\\src\\\\app\\\\solutions\" 2>&1; mkdir -p \"D:\\\\AI\\\\website\\\\src\\\\app\\\\resources\" 2>&1; echo \"dirs created\")",
+      "Bash(node -e ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/)",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "mcp__Claude_in_Chrome__computer",
+      "WebSearch",
+      "WebFetch(domain:fungies.io)",
+      "WebFetch(domain:github.blog)",
+      "Bash(ls \"D:\\\\AI\\\\\" 2>&1)",
+      "PowerShell(Head 30)",
+      "PowerShell(dir \"D:\\\\AI\\\\01_Products\\\\api-portal\\\\dashboard\" | Select-Object Name; Get-Content \"D:\\\\AI\\\\01_Products\\\\api-portal\\\\dashboard\\\\$\\(dir 'D:\\\\AI\\\\01_Products\\\\api-portal\\\\dashboard' | Select-Object -First 1 -ExpandProperty Name\\)\" -TotalCount 30 2>$null)",
+      "Bash(vercel --version)",
+      "Bash(git config *)"
+    ]
+  }
+}
