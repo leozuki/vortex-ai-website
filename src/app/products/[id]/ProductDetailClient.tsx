@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ArrowUpRight, ChevronDown, Zap, CheckCircle2 } from 'lucide-react'
 import { useLang } from '@/context/LangContext'
 import { Navbar } from '@/components/layout/Navbar'
@@ -185,6 +186,12 @@ function FeatureSmall({ feature, color, lang, index }: {
   )
 }
 
+/* ─── Screenshot availability ───────────────────────────────────────── */
+const SCREENSHOT_IDS = new Set([
+  'digital-office', 'crm', 'bigdata-pipeline', 'hubspot-auto',
+  'arcso', 'extensions-suite', 'taomeettrap', 'crm-v2',
+])
+
 /* ─── Main Component ─────────────────────────────────────────────────── */
 
 export function ProductDetailClient({ product, detail }: Props) {
@@ -330,8 +337,20 @@ export function ProductDetailClient({ product, detail }: Props) {
                       </div>
                     </div>
 
-                    <div className="p-3">
-                      <ProductVisual type={product.visual as VisualType} color={c} large />
+                    <div className={SCREENSHOT_IDS.has(product.id) ? 'relative overflow-hidden' : 'p-3'}>
+                      {SCREENSHOT_IDS.has(product.id) ? (
+                        <Image
+                          src={`/screenshots/${product.id}.png`}
+                          alt={product.name}
+                          width={960}
+                          height={600}
+                          className="w-full h-auto object-cover object-top"
+                          style={{ display: 'block' }}
+                          priority
+                        />
+                      ) : (
+                        <ProductVisual type={product.visual as VisualType} color={c} large />
+                      )}
                     </div>
 
                     {/* Overlay shimmer */}

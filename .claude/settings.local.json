@@ -31,7 +31,10 @@
       "Bash(git branch *)",
       "Bash(git push *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(vercel --prod --yes)",
+      "PowerShell(Get-ChildItem \"D:\\\\AI\\\\01_Products\\\\DigtalOffice\" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 30 | ForEach-Object { $_.FullName })",
+      "mcp__Claude_in_Chrome__list_connected_browsers"
     ]
   }
 }
