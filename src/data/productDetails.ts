@@ -10,9 +10,15 @@ export interface HowItWorksStep {
   desc: { vi: string; en: string }
 }
 
+export interface PainPoint {
+  icon: string
+  text: { vi: string; en: string }
+}
+
 export interface ProductDetail {
   tagline: { vi: string; en: string }
   heroDesc: { vi: string; en: string }
+  painPoints: PainPoint[]
   features: ProductFeature[]
   howItWorks: HowItWorksStep[]
   results: { metric: string; label: { vi: string; en: string } }[]
@@ -29,6 +35,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Bạn đang trả lương cho người để làm những việc lặp đi lặp lại mỗi ngày? Digital Office thay thế toàn bộ bằng hệ thống đa tác nhân AI: tự lên kế hoạch, tự phân công, tự thực thi, tự kiểm tra. Bạn chỉ cần giao việc — và nhận kết quả.',
       en: 'Are you paying people to do the same repetitive tasks every day? Digital Office replaces all of that with a multi-agent AI system: self-planning, self-assigning, self-executing, self-reviewing. You just delegate — and receive results.',
     },
+    painPoints: [
+      { icon: '💸', text: { vi: 'Trả lương nhân sự để làm việc lặp đi lặp lại mỗi ngày', en: 'Paying staff for the same repetitive tasks every single day' } },
+      { icon: '⏰', text: { vi: 'Công việc tắc nghẽn vì phụ thuộc vào một người duy nhất', en: 'Workflow bottlenecked by a single person\'s availability' } },
+      { icon: '😩', text: { vi: 'Không biết task đang ở đâu, ai đang làm gì, tiến độ thế nào', en: 'No visibility into who is doing what or current progress' } },
+    ],
     features: [
       {
         icon: '🧠',
@@ -131,6 +142,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Bạn có hàng nghìn lead nhưng đội sales gọi không biết gọi ai trước? BigData Pipeline gom toàn bộ dữ liệu thô, làm giàu từ Facebook và Google, rồi AI tự phân nhóm và chấm điểm tiềm năng từng người. Đội sales chỉ thấy những người sẵn sàng mua.',
       en: 'You have thousands of leads but your sales team doesn\'t know who to call first? BigData Pipeline aggregates all raw data, enriches from Facebook and Google, then AI clusters and scores each lead\'s potential. Your sales team only sees people ready to buy.',
     },
+    painPoints: [
+      { icon: '📊', text: { vi: 'Dữ liệu nằm rải rác ở 5-6 nguồn, không ai tổng hợp được', en: 'Data scattered across 5-6 sources with no unified view' } },
+      { icon: '🐌', text: { vi: 'Báo cáo cuối tháng mất cả tuần làm thủ công bằng Excel', en: 'Monthly reports take a full week of manual Excel work' } },
+      { icon: '🔍', text: { vi: 'Không phát hiện được vấn đề kịp thời vì thiếu dashboard realtime', en: 'Issues go undetected because there\'s no real-time dashboard' } },
+    ],
     features: [
       {
         icon: '📥',
@@ -233,6 +249,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Bạn đang quản lý nhiều website nhưng không biết cái nào đang gặp vấn đề? Web Fleet là một dashboard kiểm soát toàn bộ hạ tầng web: uptime, bảo mật, hiệu suất, SSL. Sự cố xảy ra — bạn nhận Telegram alert trong vòng 1 phút.',
       en: 'Managing multiple websites but not sure which one has issues? Web Fleet is one dashboard controlling your entire web infrastructure: uptime, security, performance, SSL. An incident happens — you get a Telegram alert within 1 minute.',
     },
+    painPoints: [
+      { icon: '🚨', text: { vi: 'Website down 2 tiếng mới biết vì không có ai monitor 24/7', en: 'Site down for 2 hours before anyone noticed — no 24/7 monitoring' } },
+      { icon: '📉', text: { vi: 'Không biết trang nào chậm, trang nào đang làm khách thoát', en: 'No idea which pages are slow or causing user drop-off' } },
+      { icon: '🗂️', text: { vi: 'Quản lý 10+ website nhưng phải đăng nhập từng cái một để kiểm tra', en: 'Managing 10+ sites requires logging into each one individually' } },
+    ],
     features: [
       {
         icon: '🔴',
@@ -335,6 +356,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Tạo nội dung YouTube đều đặn đòi hỏi rất nhiều thời gian và công sức. TaoMeetsTrap là pipeline AI 7 bước hoàn toàn tự động: từ ý tưởng → viết lời → tạo nhạc → dựng hình → ghép video → upload → tối ưu SEO. Chạy mỗi ngày, không cần bạn có mặt.',
       en: 'Creating consistent YouTube content takes enormous time and effort. TaoMeetsTrap is a 7-step fully automated AI pipeline: from idea → write lyrics → generate music → create visuals → assemble video → upload → SEO optimize. Runs daily, no presence required.',
     },
+    painPoints: [
+      { icon: '🎬', text: { vi: 'Làm một video mất 2-3 ngày: quay, dựng, lồng tiếng, chỉnh màu', en: 'One video takes 2-3 days: filming, editing, voiceover, color grading' } },
+      { icon: '💰', text: { vi: 'Thuê editor freelance tốn 500k–2 triệu đồng mỗi video', en: 'Hiring a freelance editor costs 500k–2M VND per video' } },
+      { icon: '📱', text: { vi: 'Cần đăng đều đặn mỗi ngày nhưng không có đủ nội dung video', en: 'Need to post daily but never have enough video content ready' } },
+    ],
     features: [
       {
         icon: '✍️',
@@ -437,6 +463,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Deal bị bỏ sót vì quên follow-up? Không biết sales đang ở đâu trong pipeline? CRM v6.0 là hệ thống quản lý khách hàng đầy đủ tính năng, chạy ngay trên Google Sheets mà bạn đã có — không cần mua thêm phần mềm, không cần IT setup. Nâng cấp lên PostgreSQL khi cần scale.',
       en: 'Missing deals because you forgot to follow up? Not sure where sales are in the pipeline? CRM v6.0 is a full-featured customer management system running directly on Google Sheets you already have — no software purchases, no IT setup. Scale up to PostgreSQL when needed.',
     },
+    painPoints: [
+      { icon: '📋', text: { vi: 'Thông tin khách hàng nằm trong đầu nhân viên, không có chỗ lưu thống nhất', en: 'Customer info lives in staff heads with no unified system' } },
+      { icon: '🔄', text: { vi: 'Nhân viên nghỉ việc là mất toàn bộ lịch sử chăm sóc khách hàng', en: 'When staff leave, all customer history walks out with them' } },
+      { icon: '📞', text: { vi: 'Không biết khách nào đang cần follow-up, khách nào sắp chốt deal', en: 'No way to know which leads need follow-up or are close to closing' } },
+    ],
     features: [
       {
         icon: '🔀',
@@ -539,6 +570,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Mỗi sáng thứ Hai, manager lại yêu cầu báo cáo tuần. Marketing tốn 2–3 tiếng kéo data, làm chart, viết email. Hubspot Auto tự động làm tất cả: kéo data từ HubSpot, tạo biểu đồ, soạn email báo cáo và gửi cho toàn team — mỗi tuần đúng giờ, không cần ai nhớ.',
       en: 'Every Monday morning, the manager requests the weekly report. Marketing wastes 2–3 hours pulling data, making charts, writing emails. Hubspot Auto does it all automatically: pulls HubSpot data, creates charts, composes report email and sends to the whole team — every week on time, without anyone remembering.',
     },
+    painPoints: [
+      { icon: '🕐', text: { vi: 'Mất 2–3 giờ mỗi tuần kéo data thủ công và làm báo cáo trong Excel', en: 'Wasting 2–3 hours weekly pulling data manually and building Excel reports' } },
+      { icon: '📉', text: { vi: 'Báo cáo gửi trễ hoặc sai số vì làm thủ công dễ nhầm', en: 'Reports sent late or with wrong numbers due to manual errors' } },
+      { icon: '🤔', text: { vi: 'Manager không có số liệu kịp thời để ra quyết định tuần này', en: 'Manager lacks timely data to make decisions this week' } },
+    ],
     features: [
       {
         icon: '📡',
@@ -641,6 +677,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Bạn đang mở 20 cửa sổ Chrome để quản lý tài khoản? Nhầm tài khoản khi post? Mất account vì dùng chung IP? ArcSo là desktop app giúp quản lý đa tài khoản Facebook và Gmail từ một nơi: phiên làm việc độc lập, profile riêng biệt, không bao giờ nhầm lẫn.',
       en: 'Opening 20 Chrome windows to manage accounts? Posting from the wrong account? Losing accounts because of shared IPs? ArcSo is a desktop app for managing multiple Facebook and Gmail accounts in one place: independent sessions, separate profiles, never mix them up again.',
     },
+    painPoints: [
+      { icon: '📁', text: { vi: 'Mở 20 tab Chrome để quản lý tài khoản, dễ nhầm lẫn và bị ban', en: 'Opening 20 Chrome tabs to manage accounts — easy to mix up and get banned' } },
+      { icon: '⚠️', text: { vi: 'Tài khoản bị ban đột ngột vì dùng chung IP hoặc browser fingerprint', en: 'Accounts banned suddenly due to shared IPs or browser fingerprints' } },
+      { icon: '🔐', text: { vi: 'Không kiểm soát được quyền truy cập khi nhiều người dùng chung tài khoản', en: 'No access control when multiple people share the same account' } },
+    ],
     features: [
       {
         icon: '🗂️',
@@ -743,6 +784,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Bạn đang copy-paste qua lại giữa 5 tab mỗi ngày? Extensions Suite đưa ba công cụ thiết yếu vào thẳng trình duyệt: AI assistant luôn sẵn sàng, quản lý Facebook Ads không cần vào Ads Manager, và auto-repost nội dung đa nền tảng chỉ một click.',
       en: 'Copy-pasting between 5 tabs every day? Extensions Suite brings three essential tools directly into your browser: always-on AI assistant, Facebook Ads management without opening Ads Manager, and one-click multi-platform auto-repost.',
     },
+    painPoints: [
+      { icon: '🖱️', text: { vi: 'Copy-paste qua lại 5 tab mỗi ngày chỉ để hoàn thành một việc', en: 'Copy-pasting between 5 tabs every day just to complete one task' } },
+      { icon: '🧩', text: { vi: 'Cần làm tự động trên browser nhưng không biết lập trình', en: 'Need browser automation but don\'t know how to code' } },
+      { icon: '🔗', text: { vi: 'Mỗi công việc cần một extension khác nhau — cài quá nhiều, nặng máy', en: 'Every task needs a different extension — too many installed, browser slows down' } },
+    ],
     features: [
       {
         icon: '🤖',
@@ -845,6 +891,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Phòng ban của bạn đang lưu hồ sơ trong email, Google Drive cá nhân, USB? Không ai biết phiên bản nào mới nhất? DMS Pro là hệ thống quản lý tài liệu nội bộ trên Google Workspace: phân quyền theo phòng ban, quy trình duyệt một click, AI tự gắn tag và nhắc hết hạn.',
       en: 'Your department storing files in email, personal Google Drive, USB drives? No one knows which version is newest? DMS Pro is an internal document management system on Google Workspace: department-level permissions, one-click approval workflows, AI auto-tagging and expiry reminders.',
     },
+    painPoints: [
+      { icon: '📂', text: { vi: 'File nằm rải rác trong email, Drive cá nhân, USB — không ai tìm nhanh được', en: 'Files scattered in email, personal Drive, USB — no one can find things quickly' } },
+      { icon: '✍️', text: { vi: 'Không có quy trình duyệt, tài liệu quan trọng bị bỏ sót không ai ký', en: 'No approval process — critical documents get missed or left unsigned' } },
+      { icon: '🔒', text: { vi: 'Không kiểm soát được ai đang xem hay chỉnh sửa tài liệu nội bộ', en: 'No control over who is viewing or editing internal documents' } },
+    ],
     features: [
       {
         icon: '🗂️',
@@ -947,6 +998,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Đang mất hàng giờ để nghe lại recording và gõ biên bản họp? Hay thuê người transcribe với chi phí cao? VideoKL chuyển đổi video/audio tiếng Việt thành văn bản chính xác với timestamp từng từ — 1 giờ recording xử lý xong trong 5 phút, chi phí $0.06.',
       en: 'Spending hours replaying recordings and typing meeting minutes? Or hiring transcribers at high cost? VideoKL converts Vietnamese video/audio to accurate text with word-level timestamps — 1 hour of recording processed in 5 minutes at $0.06 cost.',
     },
+    painPoints: [
+      { icon: '🎧', text: { vi: 'Nghe lại toàn bộ meeting 1 tiếng chỉ để tìm 1 quyết định quan trọng', en: 'Re-listening to 1-hour meetings just to find one key decision' } },
+      { icon: '🌐', text: { vi: 'Video tiếng Anh hay nhưng không có phụ đề tiếng Việt để team dùng được', en: 'Great English content but no Vietnamese subtitles for your team to use' } },
+      { icon: '📝', text: { vi: 'Tốn cả buổi sáng transcribe meeting rồi format lại thành biên bản', en: 'Spending a whole morning transcribing then formatting meeting minutes' } },
+    ],
     features: [
       {
         icon: '🎯',
@@ -1049,6 +1105,11 @@ export const productDetails: Record<string, ProductDetail> = {
       vi: 'Đang quản lý nhiều tài khoản Facebook Ads cho nhiều khách hàng? Mệt mỏi với việc đăng nhập từng tài khoản một, token hết hạn không báo, không có cái nhìn tổng thể? Ads Portal là API hub tập trung: quản lý tất cả tài khoản, token rotation tự động, analytics realtime từ một nơi.',
       en: 'Managing multiple Facebook Ads accounts for multiple clients? Tired of logging into each one, tokens expiring without warning, no overall view? Ads Portal is a centralized API hub: manage all accounts, automatic token rotation, real-time analytics from one place.',
     },
+    painPoints: [
+      { icon: '📊', text: { vi: 'Dữ liệu quảng cáo nằm ở nhiều tài khoản khác nhau, không có cái nhìn tổng', en: 'Ad data spread across many accounts with no unified overview' } },
+      { icon: '💸', text: { vi: 'Không biết campaign nào đang lỗ, cứ để chạy đến cuối tháng mới hay', en: 'Can\'t tell which campaigns are losing money until end-of-month reports' } },
+      { icon: '⏱️', text: { vi: 'Token hết hạn không báo, campaign ngừng chạy mà không ai biết', en: 'Token expires without warning, campaigns stop running without anyone knowing' } },
+    ],
     features: [
       {
         icon: '🗂️',

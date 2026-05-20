@@ -11,6 +11,7 @@ import { ProductVisual } from '@/components/ui/ProductVisual'
 import { ProductIcon } from '@/components/ui/ProductIcon'
 import type { Product, VisualType } from '@/types'
 import type { ProductDetail } from '@/data/productDetails'
+import type { PainPoint } from '@/data/productDetails'
 
 interface Props {
   product: Product
@@ -364,6 +365,57 @@ export function ProductDetailClient({ product, detail }: Props) {
         </section>
 
         {/* ═══════════════════════════════════════════════════════
+            PAIN POINTS
+        ════════════════════════════════════════════════════════ */}
+        {detail && detail.painPoints?.length > 0 && (
+          <section className="relative px-4 py-20 overflow-hidden"
+            style={{ background: 'linear-gradient(180deg, #080810 0%, #0a0a14 100%)' }}>
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px"
+              style={{ background: `linear-gradient(90deg, transparent, ${c}20, transparent)` }} />
+
+            <div className="mx-auto max-w-4xl">
+              <FadeUp className="mb-10 text-center">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: c + '80' }}>
+                  {lang === 'vi' ? 'Bạn đang gặp vấn đề này?' : 'Sound familiar?'}
+                </p>
+                <h2 className="text-2xl font-black text-white md:text-3xl">
+                  {lang === 'vi' ? 'Những vấn đề mà hầu hết doanh nghiệp đang chịu đựng' : 'Problems most businesses are still putting up with'}
+                </h2>
+              </FadeUp>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {detail.painPoints.map((p: PainPoint, i: number) => (
+                  <FadeUp key={i} delay={i * 80}>
+                    <div className="flex items-start gap-4 rounded-2xl p-5"
+                      style={{
+                        background: 'linear-gradient(145deg, rgba(239,68,68,0.06) 0%, rgba(239,68,68,0.02) 100%)',
+                        border: '1px solid rgba(239,68,68,0.12)',
+                      }}>
+                      <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl text-xl"
+                        style={{ background: 'rgba(239,68,68,0.08)' }}>
+                        {p.icon}
+                      </div>
+                      <p className="text-sm leading-relaxed text-zinc-400 pt-1">{p.text[lang]}</p>
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+
+              {/* Arrow down → solution */}
+              <FadeUp className="mt-10 text-center">
+                <div className="inline-flex flex-col items-center gap-2">
+                  <div className="w-px h-8" style={{ background: `linear-gradient(to bottom, rgba(239,68,68,0.3), ${c}60)` }} />
+                  <div className="rounded-full px-4 py-1.5 text-xs font-bold"
+                    style={{ background: `${c}15`, color: c, border: `1px solid ${c}30` }}>
+                    {lang === 'vi' ? `${product.name} giải quyết tất cả` : `${product.name} solves all of this`}
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
+          </section>
+        )}
+
+        {/* ═══════════════════════════════════════════════════════
             METRICS BAR
         ════════════════════════════════════════════════════════ */}
         {detail && (
@@ -425,15 +477,11 @@ export function ProductDetailClient({ product, detail }: Props) {
                 </div>
               </FadeUp>
 
-              {/* Bento grid — first item spans 2 cols, rest fill */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+              {/* Uniform 3-col feature grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {detail.features.map((f, i) => (
                   <FadeUp key={i} delay={i * 55}>
-                    {i === 0 ? (
-                      <FeatureLarge feature={f} color={c} lang={lang} index={i} />
-                    ) : (
-                      <FeatureSmall feature={f} color={c} lang={lang} index={i} />
-                    )}
+                    <FeatureSmall feature={f} color={c} lang={lang} index={i} />
                   </FadeUp>
                 ))}
               </div>
@@ -465,53 +513,29 @@ export function ProductDetailClient({ product, detail }: Props) {
                 </h2>
               </FadeUp>
 
-              <div className="relative space-y-4">
-                {/* Connecting line */}
-                <div className="absolute left-7 top-14 bottom-14 w-px hidden sm:block pointer-events-none"
-                  style={{ background: `linear-gradient(to bottom, transparent, ${c}35 20%, ${c}35 80%, transparent)` }} />
+              {/* Horizontal steps on desktop, vertical on mobile */}
+              <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Connecting line desktop */}
+                <div className="absolute top-8 left-[16.67%] right-[16.67%] h-px hidden md:block pointer-events-none"
+                  style={{ background: `linear-gradient(to right, transparent, ${c}40 20%, ${c}40 80%, transparent)` }} />
 
                 {detail.howItWorks.map((step, i) => (
-                  <FadeUp key={i} delay={i * 110}>
-                    <div className="flex gap-5 group">
-                      {/* Number node */}
-                      <div className="relative flex-shrink-0 z-10">
-                        <div className="flex h-14 w-14 flex-col items-center justify-center rounded-2xl transition-all duration-400 group-hover:scale-105"
+                  <FadeUp key={i} delay={i * 100}>
+                    <div className="flex flex-col items-center text-center md:items-center group">
+                      {/* Number bubble */}
+                      <div className="relative z-10 mb-5">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-full font-black text-xl transition-all duration-300 group-hover:scale-110"
                           style={{
-                            background: `linear-gradient(145deg, ${c}22 0%, ${c}10 100%)`,
-                            border: `1px solid ${c}35`,
-                            boxShadow: `0 0 16px ${c}15`,
+                            background: `linear-gradient(145deg, ${c}28 0%, ${c}10 100%)`,
+                            border: `2px solid ${c}50`,
+                            color: c,
+                            boxShadow: `0 0 24px ${c}20`,
                           }}>
-                          <span className="font-black text-sm leading-none tabular-nums" style={{ color: c }}>{step.number}</span>
+                          {step.number}
                         </div>
-                        {/* Pulse ring */}
-                        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                          style={{ boxShadow: `0 0 0 6px ${c}12` }} />
                       </div>
-
-                      {/* Card */}
-                      <div className="flex-1 rounded-2xl p-6 transition-all duration-400 group-hover:-translate-y-0.5"
-                        style={{
-                          background: 'linear-gradient(145deg, #111120 0%, #0d0d18 100%)',
-                          border: '1px solid rgba(255,255,255,0.05)',
-                          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.03)',
-                        }}
-                        onMouseEnter={e => {
-                          const el = e.currentTarget as HTMLElement
-                          el.style.borderColor = `${c}25`
-                          el.style.boxShadow = `0 8px 32px ${c}12, inset 0 1px 0 ${c}10`
-                        }}
-                        onMouseLeave={e => {
-                          const el = e.currentTarget as HTMLElement
-                          el.style.borderColor = 'rgba(255,255,255,0.05)'
-                          el.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,0.03)'
-                        }}>
-                        <div className="flex items-start justify-between mb-2.5">
-                          <h3 className="font-bold text-white text-[15px] leading-snug">{step.title[lang]}</h3>
-                          <CheckCircle2 size={14} className="flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                            style={{ color: c }} />
-                        </div>
-                        <p className="text-sm leading-relaxed text-zinc-500">{step.desc[lang]}</p>
-                      </div>
+                      <h3 className="mb-2.5 font-bold text-white text-[15px] leading-snug px-2">{step.title[lang]}</h3>
+                      <p className="text-sm leading-relaxed text-zinc-500 px-2">{step.desc[lang]}</p>
                     </div>
                   </FadeUp>
                 ))}
