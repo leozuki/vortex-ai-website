@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useLang } from '@/context/LangContext'
 import { solutions } from '@/data/solutions'
+import { SemanticIcon } from '@/components/ui/SemanticIcon'
 
 export function SolutionsSection() {
   const { lang } = useLang()
@@ -55,7 +56,7 @@ export function SolutionsSection() {
                   border: `1px solid ${active === i ? s.color + '35' : 'rgba(255,255,255,0.05)'}`,
                 }}
               >
-                <span className="text-xl">{s.icon}</span>
+                <SemanticIcon name={s.icon} size={20} color={active === i ? s.color : 'rgba(255,255,255,0.45)'} />
                 <span className="hidden text-sm font-medium text-zinc-300 lg:block">{s.industry[lang]}</span>
                 {active === i && (
                   <div className="ml-auto hidden h-1.5 w-1.5 rounded-full lg:block" style={{ background: s.color }} />
@@ -72,9 +73,9 @@ export function SolutionsSection() {
           >
             {/* Header */}
             <div className="mb-5 flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl"
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
                 style={{ background: `${sol.color}15` }}>
-                {sol.icon}
+                <SemanticIcon name={sol.icon} size={22} color={sol.color} />
               </div>
               <div>
                 <div className="mb-1 text-xs font-semibold uppercase tracking-widest" style={{ color: sol.color }}>
