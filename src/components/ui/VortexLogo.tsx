@@ -86,10 +86,7 @@ export function VortexWordmark({ size = 20, className }: { size?: number; classN
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
       }}>
-        Vortex
-      </span>
-      <span style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400, fontSize: size * 0.85 }}>
-        {' '}AI
+        SOLAI
       </span>
     </span>
   )

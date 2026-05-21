@@ -1,26 +1,37 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Instrument_Serif, Barlow } from 'next/font/google'
 import './globals.css'
 import { LangProvider } from '@/context/LangContext'
 
-const inter = Inter({ subsets: ['latin', 'vietnamese'] })
+const inter = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-inter' })
+const serif = Instrument_Serif({
+  weight: '400',
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  variable: '--font-serif',
+})
+const barlow = Barlow({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-barlow',
+})
 
 export const metadata: Metadata = {
-  title: 'Vortex AI — Where Ideas Accelerate',
+  title: 'SOLAI — Tự động hóa quy trình, giảm chi phí vận hành',
   description:
-    'Vortex AI xây dựng các sản phẩm phần mềm AI thông minh cho doanh nghiệp — từ hệ thống đa tác nhân, pipeline dữ liệu đến nền tảng quản lý.',
-  keywords: ['AI', 'automation', 'Vietnam', 'software', 'enterprise', 'Vortex AI'],
+    'SOLAI giúp doanh nghiệp tự động hóa công việc lặp lại — nhập liệu, báo cáo, theo dõi khách hàng, duyệt quy trình. 9 sản phẩm đang chạy thật tại doanh nghiệp Việt.',
+  keywords: ['tự động hóa', 'AI doanh nghiệp', 'phần mềm AI', 'Vietnam', 'SOLAI', 'automation'],
   openGraph: {
-    title: 'Vortex AI',
-    description: 'Where Ideas Accelerate',
+    title: 'SOLAI — Tự động hóa quy trình doanh nghiệp',
+    description: 'Hàng nghìn giờ thủ công mỗi tháng — biến mất.',
     type: 'website',
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" className="h-full antialiased">
-      <body className={`${inter.className} min-h-full`}>
+    <html lang="vi" className={`h-full antialiased ${inter.variable} ${serif.variable} ${barlow.variable}`}>
+      <body className="min-h-full" style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}>
         <LangProvider>{children}</LangProvider>
       </body>
     </html>

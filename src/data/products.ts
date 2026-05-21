@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: 'digital-office',
     name: 'Digital Office',
-    icon: '🤖',
+    icon: 'robot',
     category: 'automation',
     featured: true,
     headline: { vi: 'Đội AI 5 người làm việc 24/7 cho bạn', en: 'A 5-agent AI team that works 24/7 for you' },
@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: 'bigdata-pipeline',
     name: 'BigData Pipeline',
-    icon: '📊',
+    icon: 'dashboard',
     category: 'pipeline',
     featured: true,
     headline: { vi: 'Biết ai sẽ mua hàng trước khi họ biết', en: 'Know who will buy before they do' },
@@ -38,7 +38,7 @@ export const products: Product[] = [
   {
     id: 'web-fleet',
     name: 'Web Fleet',
-    icon: '🛡️',
+    icon: 'shield',
     category: 'monitoring',
     featured: true,
     headline: { vi: 'Website của bạn không bao giờ ngủ một mình', en: 'Your websites never sleep alone' },
@@ -55,7 +55,7 @@ export const products: Product[] = [
   {
     id: 'taomeettrap',
     name: 'TaoMeetsTrap',
-    icon: '🎬',
+    icon: 'video',
     category: 'video',
     featured: true,
     headline: { vi: 'Từ ý tưởng đến video YouTube — trong 90 giây', en: 'From idea to YouTube video — in 90 seconds' },
@@ -72,7 +72,7 @@ export const products: Product[] = [
   {
     id: 'crm',
     name: 'CRM v6.0',
-    icon: '💼',
+    icon: 'document',
     category: 'crm',
     featured: true,
     headline: { vi: 'Không còn deal bị bỏ sót vì quên', en: 'No more deals lost to forgetfulness' },
@@ -89,7 +89,7 @@ export const products: Product[] = [
   {
     id: 'hubspot-auto',
     name: 'Hubspot Auto',
-    icon: '📧',
+    icon: 'email',
     category: 'automation',
     featured: false,
     headline: { vi: 'Báo cáo thứ Hai — viết xong từ tối Chủ Nhật', en: 'Monday report — done by Sunday night' },
@@ -106,7 +106,7 @@ export const products: Product[] = [
   {
     id: 'arcso',
     name: 'ArcSo',
-    icon: '🖥️',
+    icon: 'desktop',
     category: 'desktop',
     featured: false,
     headline: { vi: 'Quản lý 50 tài khoản dễ như quản lý 1', en: 'Manage 50 accounts as easily as managing 1' },
@@ -123,7 +123,7 @@ export const products: Product[] = [
   {
     id: 'extensions-suite',
     name: 'Extensions Suite',
-    icon: '🧩',
+    icon: 'puzzle',
     category: 'extension',
     featured: false,
     headline: { vi: 'Lợi thế cạnh tranh ngay trong trình duyệt', en: 'Your competitive edge, built into the browser' },
@@ -140,7 +140,7 @@ export const products: Product[] = [
   {
     id: 'dms',
     name: 'DMS Pro',
-    icon: '📁',
+    icon: 'folder',
     category: 'document',
     featured: false,
     headline: { vi: 'Hồ sơ không còn thất lạc, duyệt không còn chờ đợi', en: 'No more lost files, no more approval delays' },
@@ -157,7 +157,7 @@ export const products: Product[] = [
   {
     id: 'video-transcript',
     name: 'VideoKL',
-    icon: '🎙️',
+    icon: 'mic',
     category: 'video',
     featured: false,
     headline: { vi: 'Nói 1 giờ — nhận transcript chính xác trong 5 phút', en: 'Speak for 1 hour — get accurate transcript in 5 minutes' },
@@ -174,7 +174,7 @@ export const products: Product[] = [
   {
     id: 'ads-portal',
     name: 'Ads Portal',
-    icon: '📊',
+    icon: 'dashboard',
     category: 'ads',
     featured: false,
     headline: { vi: 'Toàn bộ Facebook Ads trong một dashboard — không cần Ads Manager', en: 'All your Facebook Ads in one dashboard — no Ads Manager needed' },

@@ -36,13 +36,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Are you paying people to do the same repetitive tasks every day? Digital Office replaces all of that with a multi-agent AI system: self-planning, self-assigning, self-executing, self-reviewing. You just delegate — and receive results.',
     },
     painPoints: [
-      { icon: '💸', text: { vi: 'Trả lương nhân sự để làm việc lặp đi lặp lại mỗi ngày', en: 'Paying staff for the same repetitive tasks every single day' } },
-      { icon: '⏰', text: { vi: 'Công việc tắc nghẽn vì phụ thuộc vào một người duy nhất', en: 'Workflow bottlenecked by a single person\'s availability' } },
-      { icon: '😩', text: { vi: 'Không biết task đang ở đâu, ai đang làm gì, tiến độ thế nào', en: 'No visibility into who is doing what or current progress' } },
+      { icon: 'money', text: { vi: 'Trả lương nhân sự để làm việc lặp đi lặp lại mỗi ngày', en: 'Paying staff for the same repetitive tasks every single day' } },
+      { icon: 'clock', text: { vi: 'Công việc tắc nghẽn vì phụ thuộc vào một người duy nhất', en: 'Workflow bottlenecked by a single person\'s availability' } },
+      { icon: 'alert', text: { vi: 'Không biết task đang ở đâu, ai đang làm gì, tiến độ thế nào', en: 'No visibility into who is doing what or current progress' } },
     ],
     features: [
       {
-        icon: '🧠',
+        icon: 'brain',
         title: { vi: 'Planner: Phân tích & chia nhỏ task', en: 'Planner: Analyze & decompose tasks' },
         desc: {
           vi: 'Claude Sonnet nhận yêu cầu của bạn bằng tiếng Việt, hiểu ngữ cảnh, và tự chia nhỏ thành các bước có thể thực thi. Không cần format đặc biệt.',
@@ -50,7 +50,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📋',
+        icon: 'document',
         title: { vi: 'Manager: Giao đúng người, đúng việc', en: 'Manager: Right person, right task' },
         desc: {
           vi: 'Gemini Flash đọc skill profile của từng worker và tự phân công task phù hợp. Không có tình trạng một người làm hết, một người ngồi chơi.',
@@ -58,7 +58,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'Workers: Chạy song song, không bottleneck', en: 'Workers: Parallel execution, zero bottleneck' },
         desc: {
           vi: 'Nhiều worker chạy đồng thời qua WebSocket. Task 10 bước hoàn thành nhanh gần bằng task 1 bước nhờ parallel processing.',
@@ -66,7 +66,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '✅',
+        icon: 'success',
         title: { vi: 'Reviewer: Tự kiểm tra chất lượng', en: 'Reviewer: Self quality control' },
         desc: {
           vi: 'Mỗi output đều qua Claude Sonnet review trước khi trả về. Nếu chưa đạt, tự yêu cầu làm lại — tối đa 3 vòng. Bạn nhận kết quả đã được kiểm duyệt.',
@@ -74,7 +74,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔄',
+        icon: 'repeat',
         title: { vi: 'Multi-provider: Claude, Gemini, Ollama', en: 'Multi-provider: Claude, Gemini, Ollama' },
         desc: {
           vi: 'Tích hợp sẵn Claude, Gemini, GPT-4o, và Ollama local. Tự động fallback nếu một provider gặp sự cố. Ollama giúp chạy hoàn toàn offline, chi phí $0.',
@@ -82,7 +82,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'Live Graph: Thấy AI đang làm gì', en: 'Live Graph: See what AI is doing' },
         desc: {
           vi: 'Graph tương tác hiển thị realtime từng node đang xử lý, trạng thái, và kết quả. Bạn biết chính xác tiến độ mà không cần đợi hay đoán mò.',
@@ -143,13 +143,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'You have thousands of leads but your sales team doesn\'t know who to call first? BigData Pipeline aggregates all raw data, enriches from Facebook and Google, then AI clusters and scores each lead\'s potential. Your sales team only sees people ready to buy.',
     },
     painPoints: [
-      { icon: '📊', text: { vi: 'Dữ liệu nằm rải rác ở 5-6 nguồn, không ai tổng hợp được', en: 'Data scattered across 5-6 sources with no unified view' } },
-      { icon: '🐌', text: { vi: 'Báo cáo cuối tháng mất cả tuần làm thủ công bằng Excel', en: 'Monthly reports take a full week of manual Excel work' } },
-      { icon: '🔍', text: { vi: 'Không phát hiện được vấn đề kịp thời vì thiếu dashboard realtime', en: 'Issues go undetected because there\'s no real-time dashboard' } },
+      { icon: 'dashboard', text: { vi: 'Dữ liệu nằm rải rác ở 5-6 nguồn, không ai tổng hợp được', en: 'Data scattered across 5-6 sources with no unified view' } },
+      { icon: 'clock', text: { vi: 'Báo cáo cuối tháng mất cả tuần làm thủ công bằng Excel', en: 'Monthly reports take a full week of manual Excel work' } },
+      { icon: 'search', text: { vi: 'Không phát hiện được vấn đề kịp thời vì thiếu dashboard realtime', en: 'Issues go undetected because there\'s no real-time dashboard' } },
     ],
     features: [
       {
-        icon: '📥',
+        icon: 'collect',
         title: { vi: 'Thu thập từ mọi nguồn', en: 'Collect from any source' },
         desc: {
           vi: 'Import từ Google Sheets, CRM cũ, form leads, file CSV/Excel. Hệ thống tự chuẩn hóa format, xử lý trùng lặp và thiếu sót — không cần làm sạch dữ liệu thủ công.',
@@ -157,7 +157,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔗',
+        icon: 'pipeline',
         title: { vi: 'Enrichment từ Facebook & Google', en: 'Enrich from Facebook & Google' },
         desc: {
           vi: 'Tự động bổ sung thông tin công khai: nghề nghiệp, sở thích, vị trí, công ty từ Facebook và Google. Mỗi lead trở nên "dày" hơn mà không tốn thời gian nghiên cứu.',
@@ -165,7 +165,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🎯',
+        icon: 'cursor',
         title: { vi: 'AI Clustering tự động', en: 'Automatic AI Clustering' },
         desc: {
           vi: 'Thuật toán K-means nhóm audience thành 5–10 segment dựa trên hành vi và đặc điểm tương đồng. Biết chính xác nhóm nào có tỷ lệ chuyển đổi cao nhất.',
@@ -173,7 +173,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⭐',
+        icon: 'star',
         title: { vi: 'Lead Scoring 0–100 điểm', en: 'Lead Scoring 0–100 points' },
         desc: {
           vi: '20+ tín hiệu tính điểm: tương tác gần đây, mức độ phù hợp profile, hành vi trên website, lịch sử mua hàng. Lead 80+ điểm — gọi ngay hôm nay.',
@@ -181,7 +181,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'Dashboard phân tích trực quan', en: 'Visual analytics dashboard' },
         desc: {
           vi: 'Chart.js hiển thị phân phối điểm, breakdown theo segment, xu hướng theo tuần. Manager nhìn dashboard biết ngay đội sales cần tập trung vào đâu.',
@@ -189,7 +189,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚙️',
+        icon: 'settings',
         title: { vi: 'Pipeline CLI linh hoạt', en: 'Flexible CLI pipeline' },
         desc: {
           vi: 'Chạy pipeline đầy đủ hoặc từng giai đoạn riêng lẻ. Tích hợp vào cron job để tự động cập nhật hàng ngày. Output ra CSV, JSON, hoặc đẩy thẳng vào CRM.',
@@ -250,13 +250,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Managing multiple websites but not sure which one has issues? Web Fleet is one dashboard controlling your entire web infrastructure: uptime, security, performance, SSL. An incident happens — you get a Telegram alert within 1 minute.',
     },
     painPoints: [
-      { icon: '🚨', text: { vi: 'Website down 2 tiếng mới biết vì không có ai monitor 24/7', en: 'Site down for 2 hours before anyone noticed — no 24/7 monitoring' } },
-      { icon: '📉', text: { vi: 'Không biết trang nào chậm, trang nào đang làm khách thoát', en: 'No idea which pages are slow or causing user drop-off' } },
-      { icon: '🗂️', text: { vi: 'Quản lý 10+ website nhưng phải đăng nhập từng cái một để kiểm tra', en: 'Managing 10+ sites requires logging into each one individually' } },
+      { icon: 'alert', text: { vi: 'Website down 2 tiếng mới biết vì không có ai monitor 24/7', en: 'Site down for 2 hours before anyone noticed — no 24/7 monitoring' } },
+      { icon: 'trend', text: { vi: 'Không biết trang nào chậm, trang nào đang làm khách thoát', en: 'No idea which pages are slow or causing user drop-off' } },
+      { icon: 'folder', text: { vi: 'Quản lý 10+ website nhưng phải đăng nhập từng cái một để kiểm tra', en: 'Managing 10+ sites requires logging into each one individually' } },
     ],
     features: [
       {
-        icon: '🔴',
+        icon: 'alert',
         title: { vi: 'Uptime monitoring mỗi 60 giây', en: 'Uptime monitoring every 60 seconds' },
         desc: {
           vi: 'Ping website mỗi phút. Downtime detect ngay lập tức. Alert qua Telegram kèm thông tin lỗi chi tiết — không mất cả ngày mới biết website chết.',
@@ -264,7 +264,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🛡️',
+        icon: 'shield',
         title: { vi: 'SSL & Security audit tự động', en: 'Automatic SSL & Security audit' },
         desc: {
           vi: 'Theo dõi ngày hết hạn SSL, cảnh báo trước 30 ngày. Scan security headers, phát hiện mixed content, cấu hình HTTPS không an toàn.',
@@ -272,7 +272,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'PageSpeed & Core Web Vitals', en: 'PageSpeed & Core Web Vitals' },
         desc: {
           vi: 'Tích hợp Google PageSpeed API, theo dõi LCP, FID, CLS theo thời gian. Biết ngay sau lần deploy nào mà website chậm đi.',
@@ -280,7 +280,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🤖',
+        icon: 'robot',
         title: { vi: 'AI Assistant phân tích vấn đề', en: 'AI Assistant analyzes issues' },
         desc: {
           vi: 'Hỏi Gemini AI về bất kỳ vấn đề nào: "Tại sao PageSpeed giảm sau lần deploy hôm qua?" — AI phân tích data và đề xuất giải pháp cụ thể.',
@@ -288,7 +288,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔑',
+        icon: 'key',
         title: { vi: 'Credential Vault mã hóa', en: 'Encrypted Credential Vault' },
         desc: {
           vi: 'Lưu mật khẩu, API keys, FTP credentials cho tất cả website trong một nơi mã hóa an toàn. Không cần dùng sticky note hay notepad nữa.',
@@ -296,7 +296,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📈',
+        icon: 'trend',
         title: { vi: 'GitHub Deploy tracking', en: 'GitHub Deploy tracking' },
         desc: {
           vi: 'Kết nối GitHub Webhooks để tự động log mỗi lần deploy. So sánh performance trước/sau — biết ngay commit nào làm chậm production.',
@@ -357,13 +357,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Creating consistent YouTube content takes enormous time and effort. TaoMeetsTrap is a 7-step fully automated AI pipeline: from idea → write lyrics → generate music → create visuals → assemble video → upload → SEO optimize. Runs daily, no presence required.',
     },
     painPoints: [
-      { icon: '🎬', text: { vi: 'Làm một video mất 2-3 ngày: quay, dựng, lồng tiếng, chỉnh màu', en: 'One video takes 2-3 days: filming, editing, voiceover, color grading' } },
-      { icon: '💰', text: { vi: 'Thuê editor freelance tốn 500k–2 triệu đồng mỗi video', en: 'Hiring a freelance editor costs 500k–2M VND per video' } },
-      { icon: '📱', text: { vi: 'Cần đăng đều đặn mỗi ngày nhưng không có đủ nội dung video', en: 'Need to post daily but never have enough video content ready' } },
+      { icon: 'video', text: { vi: 'Làm một video mất 2-3 ngày: quay, dựng, lồng tiếng, chỉnh màu', en: 'One video takes 2-3 days: filming, editing, voiceover, color grading' } },
+      { icon: 'money', text: { vi: 'Thuê editor freelance tốn 500k–2 triệu đồng mỗi video', en: 'Hiring a freelance editor costs 500k–2M VND per video' } },
+      { icon: 'phone', text: { vi: 'Cần đăng đều đặn mỗi ngày nhưng không có đủ nội dung video', en: 'Need to post daily but never have enough video content ready' } },
     ],
     features: [
       {
-        icon: '✍️',
+        icon: 'document',
         title: { vi: 'GPT-4o: Viết lyrics tự động', en: 'GPT-4o: Auto-write lyrics' },
         desc: {
           vi: 'Mỗi ngày hệ thống chọn theme từ 100+ chủ đề (cuộc sống, tình yêu, đường phố...) và GPT-4o viết lời nhạc Việt theo phong cách trap/hip-hop phù hợp với xu hướng.',
@@ -371,7 +371,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🎵',
+        icon: 'music',
         title: { vi: 'Suno: Nhạc chất lượng cao trong 60 giây', en: 'Suno: High-quality music in 60 seconds' },
         desc: {
           vi: 'Suno API nhận lyrics và style tags, tạo bản nhạc hoàn chỉnh với vocal, beat, mix. Chất lượng đủ để upload thương mại — không phải nhạc nền fake.',
@@ -379,7 +379,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🎨',
+        icon: 'palette',
         title: { vi: 'Imagen 3: Hình ảnh cinematic tự động', en: 'Imagen 3: Automatic cinematic visuals' },
         desc: {
           vi: 'Gemini Imagen 3 tạo 8–12 hình ảnh dark neon aesthetic phù hợp với nội dung lyrics. Prompt được tạo tự động, không cần bạn nghĩ.',
@@ -387,7 +387,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🎬',
+        icon: 'video',
         title: { vi: 'ffmpeg: Video production chuẩn YouTube', en: 'ffmpeg: YouTube-ready video production' },
         desc: {
           vi: 'Ken Burns effect trên hình ảnh, transitions mượt mà, sync audio tự động, fade in/out chuẩn. Output MP4 1080p ready-to-upload, không cần chỉnh sửa thêm.',
@@ -395,7 +395,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📤',
+        icon: 'upload',
         title: { vi: 'YouTube API: Upload + SEO tự động', en: 'YouTube API: Auto-upload + SEO' },
         desc: {
           vi: 'OAuth authentication với kênh YouTube của bạn. Tự viết title, description, tags tối ưu SEO dựa trên nội dung. Chọn thumbnail tốt nhất từ hình ảnh đã tạo.',
@@ -403,7 +403,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🗓️',
+        icon: 'calendar',
         title: { vi: 'Scheduler: Chạy đúng giờ mỗi ngày', en: 'Scheduler: Runs on time every day' },
         desc: {
           vi: 'Cron job chạy tự động vào giờ bạn chọn (ví dụ: 6am mỗi ngày). Email/Telegram notification khi hoàn thành hoặc có lỗi. Lịch sử đầy đủ mọi lần chạy.',
@@ -464,13 +464,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Missing deals because you forgot to follow up? Not sure where sales are in the pipeline? CRM v6.0 is a full-featured customer management system running directly on Google Sheets you already have — no software purchases, no IT setup. Scale up to PostgreSQL when needed.',
     },
     painPoints: [
-      { icon: '📋', text: { vi: 'Thông tin khách hàng nằm trong đầu nhân viên, không có chỗ lưu thống nhất', en: 'Customer info lives in staff heads with no unified system' } },
-      { icon: '🔄', text: { vi: 'Nhân viên nghỉ việc là mất toàn bộ lịch sử chăm sóc khách hàng', en: 'When staff leave, all customer history walks out with them' } },
-      { icon: '📞', text: { vi: 'Không biết khách nào đang cần follow-up, khách nào sắp chốt deal', en: 'No way to know which leads need follow-up or are close to closing' } },
+      { icon: 'document', text: { vi: 'Thông tin khách hàng nằm trong đầu nhân viên, không có chỗ lưu thống nhất', en: 'Customer info lives in staff heads with no unified system' } },
+      { icon: 'repeat', text: { vi: 'Nhân viên nghỉ việc là mất toàn bộ lịch sử chăm sóc khách hàng', en: 'When staff leave, all customer history walks out with them' } },
+      { icon: 'phone', text: { vi: 'Không biết khách nào đang cần follow-up, khách nào sắp chốt deal', en: 'No way to know which leads need follow-up or are close to closing' } },
     ],
     features: [
       {
-        icon: '🔀',
+        icon: 'repeat',
         title: { vi: 'Visual Pipeline kéo-thả', en: 'Drag-and-drop Visual Pipeline' },
         desc: {
           vi: 'Kanban board hiển thị từng deal theo stage: Lead → Qualified → Proposal → Won/Lost. Kéo thả để cập nhật trạng thái. Nhìn một cái biết ngay cả team đang làm gì.',
@@ -478,7 +478,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔔',
+        icon: 'bell',
         title: { vi: 'Auto Reminder không bỏ sót deal nào', en: 'Auto Reminder — never miss a deal' },
         desc: {
           vi: 'Đặt ngày follow-up cho từng deal. Hệ thống tự gửi nhắc nhở qua email/Telegram trước 24h. Không còn deal "ngủ quên" vì bận quên theo dõi.',
@@ -486,7 +486,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'Báo cáo realtime tự cập nhật', en: 'Real-time self-updating reports' },
         desc: {
           vi: 'Dashboard tự tính Win Rate, tổng doanh thu pipeline, trung bình thời gian đóng deal, conversion rate theo từng stage. Không cần tự làm báo cáo.',
@@ -494,7 +494,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '👥',
+        icon: 'people',
         title: { vi: 'Phân quyền theo vai trò (RBAC)', en: 'Role-based access control (RBAC)' },
         desc: {
           vi: 'Admin thấy tất cả. Sales chỉ thấy deal của mình. Manager thấy team. Dữ liệu nhạy cảm được bảo vệ mà không cần viết code phân quyền phức tạp.',
@@ -502,7 +502,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔄',
+        icon: 'repeat',
         title: { vi: 'Google Sheets hoặc PostgreSQL', en: 'Google Sheets or PostgreSQL' },
         desc: {
           vi: 'Bắt đầu với Google Sheets ngay hôm nay — zero cost, zero setup. Khi team lớn hơn, migrate sang NestJS + PostgreSQL với một lệnh. Không mất dữ liệu.',
@@ -510,7 +510,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📱',
+        icon: 'phone',
         title: { vi: 'Mobile-friendly, dùng điện thoại được', en: 'Mobile-friendly, works on phone' },
         desc: {
           vi: 'Sales thường xuyên gặp khách ngoài văn phòng. CRM responsive hoàn toàn — cập nhật deal, thêm ghi chú, xem pipeline ngay trên điện thoại.',
@@ -571,13 +571,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Every Monday morning, the manager requests the weekly report. Marketing wastes 2–3 hours pulling data, making charts, writing emails. Hubspot Auto does it all automatically: pulls HubSpot data, creates charts, composes report email and sends to the whole team — every week on time, without anyone remembering.',
     },
     painPoints: [
-      { icon: '🕐', text: { vi: 'Mất 2–3 giờ mỗi tuần kéo data thủ công và làm báo cáo trong Excel', en: 'Wasting 2–3 hours weekly pulling data manually and building Excel reports' } },
-      { icon: '📉', text: { vi: 'Báo cáo gửi trễ hoặc sai số vì làm thủ công dễ nhầm', en: 'Reports sent late or with wrong numbers due to manual errors' } },
-      { icon: '🤔', text: { vi: 'Manager không có số liệu kịp thời để ra quyết định tuần này', en: 'Manager lacks timely data to make decisions this week' } },
+      { icon: 'clock', text: { vi: 'Mất 2–3 giờ mỗi tuần kéo data thủ công và làm báo cáo trong Excel', en: 'Wasting 2–3 hours weekly pulling data manually and building Excel reports' } },
+      { icon: 'trend', text: { vi: 'Báo cáo gửi trễ hoặc sai số vì làm thủ công dễ nhầm', en: 'Reports sent late or with wrong numbers due to manual errors' } },
+      { icon: 'brain', text: { vi: 'Manager không có số liệu kịp thời để ra quyết định tuần này', en: 'Manager lacks timely data to make decisions this week' } },
     ],
     features: [
       {
-        icon: '📡',
+        icon: 'satellite',
         title: { vi: 'HubSpot API sync tự động', en: 'Automatic HubSpot API sync' },
         desc: {
           vi: 'Kết nối trực tiếp HubSpot API, tự động kéo deals, contacts, activities trong tuần. Không cần export tay, không cần copy-paste.',
@@ -585,7 +585,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'Charts tự động từ data thực', en: 'Automatic charts from real data' },
         desc: {
           vi: 'Chart.js tạo biểu đồ pipeline, deal velocity, conversion funnel từ data HubSpot thực tế. Charts đẹp, chuyên nghiệp, nhúng thẳng vào email.',
@@ -593,7 +593,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '✉️',
+        icon: 'email',
         title: { vi: 'Email báo cáo HTML chuyên nghiệp', en: 'Professional HTML report email' },
         desc: {
           vi: 'Template email HTML responsive với summary tự động, highlight điểm nổi bật, so sánh tuần trước. Trông như báo cáo của cả team marketing làm cả ngày.',
@@ -601,7 +601,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⏰',
+        icon: 'clock',
         title: { vi: 'Scheduler linh hoạt', en: 'Flexible scheduler' },
         desc: {
           vi: 'Cấu hình chạy bất kỳ ngày giờ nào: hàng ngày, hàng tuần, đầu tháng. Tự chọn ai nhận email trong danh sách distribution list.',
@@ -609,7 +609,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📋',
+        icon: 'document',
         title: { vi: 'Multiple report templates', en: 'Multiple report templates' },
         desc: {
           vi: 'Template cho Sales Weekly, Marketing Monthly, Executive Summary. Mỗi template tập trung vào metrics phù hợp với từng đối tượng người đọc.',
@@ -617,7 +617,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔔',
+        icon: 'bell',
         title: { vi: 'Alert bất thường tức thì', en: 'Instant anomaly alerts' },
         desc: {
           vi: 'Nếu metric giảm đột ngột (conversion rate giảm >20%, deals stuck >7 ngày), gửi alert ngay qua Slack/Telegram — không chờ đến cuối tuần mới biết.',
@@ -678,13 +678,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Opening 20 Chrome windows to manage accounts? Posting from the wrong account? Losing accounts because of shared IPs? ArcSo is a desktop app for managing multiple Facebook and Gmail accounts in one place: independent sessions, separate profiles, never mix them up again.',
     },
     painPoints: [
-      { icon: '📁', text: { vi: 'Mở 20 tab Chrome để quản lý tài khoản, dễ nhầm lẫn và bị ban', en: 'Opening 20 Chrome tabs to manage accounts — easy to mix up and get banned' } },
-      { icon: '⚠️', text: { vi: 'Tài khoản bị ban đột ngột vì dùng chung IP hoặc browser fingerprint', en: 'Accounts banned suddenly due to shared IPs or browser fingerprints' } },
-      { icon: '🔐', text: { vi: 'Không kiểm soát được quyền truy cập khi nhiều người dùng chung tài khoản', en: 'No access control when multiple people share the same account' } },
+      { icon: 'folder', text: { vi: 'Mở 20 tab Chrome để quản lý tài khoản, dễ nhầm lẫn và bị ban', en: 'Opening 20 Chrome tabs to manage accounts — easy to mix up and get banned' } },
+      { icon: 'alert', text: { vi: 'Tài khoản bị ban đột ngột vì dùng chung IP hoặc browser fingerprint', en: 'Accounts banned suddenly due to shared IPs or browser fingerprints' } },
+      { icon: 'lock', text: { vi: 'Không kiểm soát được quyền truy cập khi nhiều người dùng chung tài khoản', en: 'No access control when multiple people share the same account' } },
     ],
     features: [
       {
-        icon: '🗂️',
+        icon: 'folder',
         title: { vi: 'Phiên làm việc hoàn toàn độc lập', en: 'Completely independent sessions' },
         desc: {
           vi: 'Mỗi tài khoản chạy trong container riêng biệt — cookies, localStorage, fingerprint hoàn toàn tách biệt. Facebook/Google không thể liên kết các tài khoản với nhau.',
@@ -692,7 +692,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📋',
+        icon: 'document',
         title: { vi: 'Import hàng loạt từ CSV', en: 'Bulk import from CSV' },
         desc: {
           vi: 'Import 100 tài khoản chỉ bằng một file CSV. Format đơn giản: username, password, proxy (tùy chọn). Không cần thêm từng cái một.',
@@ -700,7 +700,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '💾',
+        icon: 'data',
         title: { vi: 'Auto-backup phiên làm việc', en: 'Auto-backup sessions' },
         desc: {
           vi: 'Tự động backup toàn bộ session data mỗi ngày. Nếu máy tính gặp sự cố, restore lại tất cả tài khoản trong vài phút — không mất login state.',
@@ -708,7 +708,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔄',
+        icon: 'repeat',
         title: { vi: 'TanStack Query: Sync realtime', en: 'TanStack Query: Real-time sync' },
         desc: {
           vi: 'Trạng thái mỗi tài khoản (online/offline/error) cập nhật realtime trên dashboard. Biết ngay tài khoản nào cần attention mà không cần click từng cái.',
@@ -716,7 +716,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🎨',
+        icon: 'palette',
         title: { vi: 'Color-coded visual management', en: 'Color-coded visual management' },
         desc: {
           vi: 'Gán màu, tag, và nhóm cho tài khoản theo mục đích: Marketing, Support, Personal... Tìm đúng tài khoản trong 1 giây dù có 50 cái.',
@@ -724,7 +724,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'Electron: Chạy native trên Windows/Mac', en: 'Electron: Native on Windows/Mac' },
         desc: {
           vi: 'Desktop app native — không cần internet, không cần server. Khởi động nhanh, chạy mượt, tích hợp system notifications khi có sự kiện quan trọng.',
@@ -785,13 +785,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Copy-pasting between 5 tabs every day? Extensions Suite brings three essential tools directly into your browser: always-on AI assistant, Facebook Ads management without opening Ads Manager, and one-click multi-platform auto-repost.',
     },
     painPoints: [
-      { icon: '🖱️', text: { vi: 'Copy-paste qua lại 5 tab mỗi ngày chỉ để hoàn thành một việc', en: 'Copy-pasting between 5 tabs every day just to complete one task' } },
-      { icon: '🧩', text: { vi: 'Cần làm tự động trên browser nhưng không biết lập trình', en: 'Need browser automation but don\'t know how to code' } },
-      { icon: '🔗', text: { vi: 'Mỗi công việc cần một extension khác nhau — cài quá nhiều, nặng máy', en: 'Every task needs a different extension — too many installed, browser slows down' } },
+      { icon: 'cursor', text: { vi: 'Copy-paste qua lại 5 tab mỗi ngày chỉ để hoàn thành một việc', en: 'Copy-pasting between 5 tabs every day just to complete one task' } },
+      { icon: 'puzzle', text: { vi: 'Cần làm tự động trên browser nhưng không biết lập trình', en: 'Need browser automation but don\'t know how to code' } },
+      { icon: 'pipeline', text: { vi: 'Mỗi công việc cần một extension khác nhau — cài quá nhiều, nặng máy', en: 'Every task needs a different extension — too many installed, browser slows down' } },
     ],
     features: [
       {
-        icon: '🤖',
+        icon: 'robot',
         title: { vi: 'AI Assistant luôn sẵn sàng (Ctrl+Shift+A)', en: 'Always-on AI Assistant (Ctrl+Shift+A)' },
         desc: {
           vi: 'Tổ hợp phím mở AI assistant ngay trên trang bất kỳ. Hỏi về nội dung đang xem, nhờ viết lại đoạn text, dịch, tóm tắt — không cần mở tab ChatGPT mới.',
@@ -799,7 +799,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📢',
+        icon: 'bell',
         title: { vi: 'Facebook Ads không cần Ads Manager', en: 'Facebook Ads without Ads Manager' },
         desc: {
           vi: 'Xem và quản lý campaign performance ngay trong sidebar trình duyệt. Tắt/bật ad set, xem spend, ROAS, CTR — không cần đăng nhập vào Ads Manager.',
@@ -807,7 +807,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔁',
+        icon: 'repeat',
         title: { vi: 'Auto-repost đa nền tảng', en: 'Multi-platform auto-repost' },
         desc: {
           vi: 'Viết post một lần, click nút — tự động đăng lên Facebook, Instagram, LinkedIn, Twitter cùng lúc. Content calendar tích hợp để lên lịch trước.',
@@ -815,7 +815,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🧩',
+        icon: 'puzzle',
         title: { vi: 'Chrome MV3: An toàn, hiệu suất cao', en: 'Chrome MV3: Safe, high performance' },
         desc: {
           vi: 'Xây dựng trên Manifest V3 mới nhất của Chrome — tiêu chuẩn bảo mật cao nhất, ít tốn pin hơn, không làm chậm trình duyệt.',
@@ -823,7 +823,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔐',
+        icon: 'lock',
         title: { vi: 'Dữ liệu lưu local, không cloud', en: 'Data stored locally, not cloud' },
         desc: {
           vi: 'API keys và dữ liệu cá nhân lưu trong Chrome Storage local trên máy bạn. Không có server nào của chúng tôi lưu thông tin tài khoản của bạn.',
@@ -831,7 +831,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'Content Scripts: Inject vào mọi trang', en: 'Content Scripts: Inject into any page' },
         desc: {
           vi: 'Extension tự nhận diện ngữ cảnh trang đang xem và hiện tính năng phù hợp. Đang ở Facebook — hiện Ads manager. Đang soạn email — hiện AI writing.',
@@ -892,13 +892,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Your department storing files in email, personal Google Drive, USB drives? No one knows which version is newest? DMS Pro is an internal document management system on Google Workspace: department-level permissions, one-click approval workflows, AI auto-tagging and expiry reminders.',
     },
     painPoints: [
-      { icon: '📂', text: { vi: 'File nằm rải rác trong email, Drive cá nhân, USB — không ai tìm nhanh được', en: 'Files scattered in email, personal Drive, USB — no one can find things quickly' } },
-      { icon: '✍️', text: { vi: 'Không có quy trình duyệt, tài liệu quan trọng bị bỏ sót không ai ký', en: 'No approval process — critical documents get missed or left unsigned' } },
-      { icon: '🔒', text: { vi: 'Không kiểm soát được ai đang xem hay chỉnh sửa tài liệu nội bộ', en: 'No control over who is viewing or editing internal documents' } },
+      { icon: 'folder', text: { vi: 'File nằm rải rác trong email, Drive cá nhân, USB — không ai tìm nhanh được', en: 'Files scattered in email, personal Drive, USB — no one can find things quickly' } },
+      { icon: 'document', text: { vi: 'Không có quy trình duyệt, tài liệu quan trọng bị bỏ sót không ai ký', en: 'No approval process — critical documents get missed or left unsigned' } },
+      { icon: 'lock', text: { vi: 'Không kiểm soát được ai đang xem hay chỉnh sửa tài liệu nội bộ', en: 'No control over who is viewing or editing internal documents' } },
     ],
     features: [
       {
-        icon: '🗂️',
+        icon: 'folder',
         title: { vi: 'Cấu trúc phân cấp theo phòng ban', en: 'Department-level hierarchy structure' },
         desc: {
           vi: 'Tổ chức tài liệu theo phòng ban, dự án, loại hồ sơ. Phân quyền xem/sửa/duyệt theo vai trò — nhân viên chỉ thấy hồ sơ phòng mình, manager thấy tất cả.',
@@ -906,7 +906,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '✅',
+        icon: 'success',
         title: { vi: 'Quy trình duyệt hồ sơ một click', en: 'One-click document approval workflow' },
         desc: {
           vi: 'Submit hồ sơ → trưởng phòng nhận notification → click Approve/Reject với comment. Toàn bộ lịch sử duyệt được lưu. Không còn email đi vòng vòng xin duyệt.',
@@ -914,7 +914,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🤖',
+        icon: 'robot',
         title: { vi: 'Gemini AI tự gắn tag thông minh', en: 'Gemini AI automatic smart tagging' },
         desc: {
           vi: 'Upload tài liệu — Gemini AI đọc nội dung, tự gắn tag phù hợp (hợp đồng, báo cáo, hóa đơn...). Tìm kiếm sau này nhanh hơn 10× so với folder thông thường.',
@@ -922,7 +922,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⏰',
+        icon: 'clock',
         title: { vi: 'Báo cáo hết hạn hàng tuần', en: 'Weekly expiry reports' },
         desc: {
           vi: 'Mỗi tuần hệ thống tự kiểm tra tất cả hồ sơ có ngày hết hạn (hợp đồng, giấy phép...) và gửi báo cáo cho người phụ trách. Không bao giờ để hợp đồng hết hạn không hay.',
@@ -930,7 +930,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔍',
+        icon: 'search',
         title: { vi: 'Full-text search toàn bộ kho hồ sơ', en: 'Full-text search across entire archive' },
         desc: {
           vi: 'Tìm kiếm theo tên, nội dung, tag, người tạo, ngày tháng. Kết quả xuất hiện trong vài giây dù có 10,000 tài liệu.',
@@ -938,7 +938,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'AppSheet: Giao diện mobile-friendly', en: 'AppSheet: Mobile-friendly interface' },
         desc: {
           vi: 'AppSheet tạo giao diện ứng dụng từ Google Sheets — nhân viên dùng được trên điện thoại ngay lập tức. Không cần cài app, không cần training phức tạp.',
@@ -999,13 +999,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Spending hours replaying recordings and typing meeting minutes? Or hiring transcribers at high cost? VideoKL converts Vietnamese video/audio to accurate text with word-level timestamps — 1 hour of recording processed in 5 minutes at $0.06 cost.',
     },
     painPoints: [
-      { icon: '🎧', text: { vi: 'Nghe lại toàn bộ meeting 1 tiếng chỉ để tìm 1 quyết định quan trọng', en: 'Re-listening to 1-hour meetings just to find one key decision' } },
-      { icon: '🌐', text: { vi: 'Video tiếng Anh hay nhưng không có phụ đề tiếng Việt để team dùng được', en: 'Great English content but no Vietnamese subtitles for your team to use' } },
-      { icon: '📝', text: { vi: 'Tốn cả buổi sáng transcribe meeting rồi format lại thành biên bản', en: 'Spending a whole morning transcribing then formatting meeting minutes' } },
+      { icon: 'headphones', text: { vi: 'Nghe lại toàn bộ meeting 1 tiếng chỉ để tìm 1 quyết định quan trọng', en: 'Re-listening to 1-hour meetings just to find one key decision' } },
+      { icon: 'globe', text: { vi: 'Video tiếng Anh hay nhưng không có phụ đề tiếng Việt để team dùng được', en: 'Great English content but no Vietnamese subtitles for your team to use' } },
+      { icon: 'document', text: { vi: 'Tốn cả buổi sáng transcribe meeting rồi format lại thành biên bản', en: 'Spending a whole morning transcribing then formatting meeting minutes' } },
     ],
     features: [
       {
-        icon: '🎯',
+        icon: 'cursor',
         title: { vi: 'Whisper AI: Chính xác tiếng Việt 95%+', en: 'Whisper AI: 95%+ Vietnamese accuracy' },
         desc: {
           vi: 'OpenAI Whisper large-v3 được fine-tune cho tiếng Việt. Nhận diện chính xác cả giọng miền Nam, miền Bắc, accent và tiếng lóng thông dụng.',
@@ -1013,7 +1013,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⏱️',
+        icon: 'clock',
         title: { vi: 'Word-level timestamp từng từ', en: 'Word-level timestamp for every word' },
         desc: {
           vi: 'Mỗi từ trong transcript có timestamp chính xác đến 0.01 giây. Click vào từ bất kỳ để jump đến đúng thời điểm trong video. Tìm kiếm trong nội dung recording siêu nhanh.',
@@ -1021,7 +1021,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📹',
+        icon: 'video-file',
         title: { vi: 'Hỗ trợ mọi định dạng video/audio', en: 'Supports all video/audio formats' },
         desc: {
           vi: 'ffmpeg xử lý MP4, MOV, AVI, MKV, MP3, WAV, M4A, WebM... Zoom recording, Google Meet, podcast, bài giảng, phỏng vấn — tất cả đều được.',
@@ -1029,7 +1029,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📄',
+        icon: 'document',
         title: { vi: 'Export JSON/SRT/TXT linh hoạt', en: 'Flexible JSON/SRT/TXT export' },
         desc: {
           vi: 'JSON với full metadata để tích hợp vào pipeline nội dung. SRT để add subtitle lên video. TXT thuần để đọc và edit. Chọn format phù hợp với workflow của bạn.',
@@ -1037,7 +1037,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'Batch processing nhiều file cùng lúc', en: 'Batch processing multiple files' },
         desc: {
           vi: 'Không cần đợi từng file. Queue hàng chục recording, hệ thống tự xử lý tuần tự hoặc song song. Thức dậy — toàn bộ transcript đã xong.',
@@ -1045,7 +1045,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔗',
+        icon: 'pipeline',
         title: { vi: 'Tích hợp vào content pipeline', en: 'Integrate into content pipeline' },
         desc: {
           vi: 'API endpoint nhận file, trả về transcript. Tích hợp vào n8n, Zapier, hoặc custom script để tự động hóa quy trình: record → transcript → summary → publish.',
@@ -1106,13 +1106,13 @@ export const productDetails: Record<string, ProductDetail> = {
       en: 'Managing multiple Facebook Ads accounts for multiple clients? Tired of logging into each one, tokens expiring without warning, no overall view? Ads Portal is a centralized API hub: manage all accounts, automatic token rotation, real-time analytics from one place.',
     },
     painPoints: [
-      { icon: '📊', text: { vi: 'Dữ liệu quảng cáo nằm ở nhiều tài khoản khác nhau, không có cái nhìn tổng', en: 'Ad data spread across many accounts with no unified overview' } },
-      { icon: '💸', text: { vi: 'Không biết campaign nào đang lỗ, cứ để chạy đến cuối tháng mới hay', en: 'Can\'t tell which campaigns are losing money until end-of-month reports' } },
-      { icon: '⏱️', text: { vi: 'Token hết hạn không báo, campaign ngừng chạy mà không ai biết', en: 'Token expires without warning, campaigns stop running without anyone knowing' } },
+      { icon: 'dashboard', text: { vi: 'Dữ liệu quảng cáo nằm ở nhiều tài khoản khác nhau, không có cái nhìn tổng', en: 'Ad data spread across many accounts with no unified overview' } },
+      { icon: 'money', text: { vi: 'Không biết campaign nào đang lỗ, cứ để chạy đến cuối tháng mới hay', en: 'Can\'t tell which campaigns are losing money until end-of-month reports' } },
+      { icon: 'clock', text: { vi: 'Token hết hạn không báo, campaign ngừng chạy mà không ai biết', en: 'Token expires without warning, campaigns stop running without anyone knowing' } },
     ],
     features: [
       {
-        icon: '🗂️',
+        icon: 'folder',
         title: { vi: 'Multi-account: Tất cả trong một nơi', en: 'Multi-account: Everything in one place' },
         desc: {
           vi: 'Thêm tất cả tài khoản Facebook Ads vào một hub duy nhất. Chuyển đổi giữa tài khoản bằng một click. Không bao giờ nhầm đang chạy report của khách hàng nào.',
@@ -1120,7 +1120,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔄',
+        icon: 'repeat',
         title: { vi: 'Token rotation tự động 24/7', en: 'Automatic token rotation 24/7' },
         desc: {
           vi: 'Facebook access token hết hạn sau 60 ngày. Ads Portal tự detect và refresh trước khi hết hạn. Không bao giờ bị ngắt kết nối giữa chừng vì token cũ.',
@@ -1128,7 +1128,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '📊',
+        icon: 'dashboard',
         title: { vi: 'Analytics realtime mọi campaign', en: 'Real-time analytics for all campaigns' },
         desc: {
           vi: 'Dashboard hiển thị spend, impressions, clicks, CTR, CPC, ROAS cho tất cả campaign cùng lúc. So sánh hiệu suất giữa các tài khoản và chiến dịch trong giây lát.',
@@ -1136,7 +1136,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🔔',
+        icon: 'bell',
         title: { vi: 'Budget alert trước khi cạn tiền', en: 'Budget alerts before funds run out' },
         desc: {
           vi: 'Đặt ngưỡng cảnh báo: "Báo tôi khi còn 20% budget". Nhận Telegram notification ngay lập tức. Không bao giờ để campaign tắt vì hết tiền mà không hay.',
@@ -1144,7 +1144,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '🛡️',
+        icon: 'shield',
         title: { vi: 'SQLite: Audit log đầy đủ', en: 'SQLite: Complete audit log' },
         desc: {
           vi: 'Mọi thay đổi đều được log: ai thay đổi budget, bật/tắt campaign nào, lúc mấy giờ. Audit trail đầy đủ cho client reporting và internal accountability.',
@@ -1152,7 +1152,7 @@ export const productDetails: Record<string, ProductDetail> = {
         },
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: { vi: 'Express API: Tích hợp vào workflow', en: 'Express API: Integrate into workflows' },
         desc: {
           vi: 'REST API đầy đủ để tích hợp với tools khác: tự động tạo báo cáo, trigger campaign từ CRM, sync data vào Google Sheets. Không bị lock vào một giao diện.',

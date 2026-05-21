@@ -154,8 +154,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Process internal documents without cloud upload', 'Run AI offline without internet', 'Fine-tune and experiment with custom models', 'Integrate into local apps without paying API fees'],
     },
     killer: {
-      vi: '🔑 Dữ liệu 100% ở máy bạn — không bao giờ ra ngoài. Lý tưởng cho doanh nghiệp có dữ liệu nhạy cảm.',
-      en: '🔑 Data stays 100% on your machine — never leaves. Ideal for businesses with sensitive data.',
+      vi: 'Dữ liệu 100% ở máy bạn — không bao giờ ra ngoài. Lý tưởng cho doanh nghiệp có dữ liệu nhạy cảm.',
+      en: 'Data stays 100% on your machine — never leaves. Ideal for businesses with sensitive data.',
     },
   },
   {
@@ -198,8 +198,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Internal team chatbot without paying ChatGPT per user', 'Q&A on company documents (PDF, Word, Excel)', 'Manage and compare multiple AI models simultaneously', 'Integrate function calling and tool use'],
     },
     killer: {
-      vi: '🚀 Thay thế hoàn toàn ChatGPT cho cả team — tự host, không giới hạn user, miễn phí.',
-      en: '🚀 Complete ChatGPT replacement for your team — self-hosted, unlimited users, free.',
+      vi: 'Thay thế hoàn toàn ChatGPT cho cả team — tự host, không giới hạn user, miễn phí.',
+      en: 'Complete ChatGPT replacement for your team — self-hosted, unlimited users, free.',
     },
   },
   {
@@ -242,8 +242,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Document Q&A chatbot with internal files (RAG)', 'Agent that auto-searches web and synthesizes info', 'AI-powered data analysis pipeline', 'Chatbot with memory and conversation history'],
     },
     killer: {
-      vi: '🔗 1000+ integrations sẵn sàng: databases, APIs, tools — plug and play không cần viết từ đầu.',
-      en: '🔗 1000+ ready integrations: databases, APIs, tools — plug and play without coding from scratch.',
+      vi: '1000+ integrations sẵn sàng: databases, APIs, tools — plug and play không cần viết từ đầu.',
+      en: '1000+ ready integrations: databases, APIs, tools — plug and play without coding from scratch.',
     },
   },
   {
@@ -286,8 +286,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Research → auto report writing pipeline', 'AI sales team: prospecting → qualify → draft email', 'Code review workflow: write → test → document', 'Market analysis with specialized agents'],
     },
     killer: {
-      vi: '🤝 Role-based collaboration — agents tự thương lượng và chia việc, không cần lập trình từng bước.',
-      en: '🤝 Role-based collaboration — agents self-negotiate and divide work, no step-by-step programming needed.',
+      vi: 'Role-based collaboration — agents tự thương lượng và chia việc, không cần lập trình từng bước.',
+      en: 'Role-based collaboration — agents self-negotiate and divide work, no step-by-step programming needed.',
     },
   },
   {
@@ -330,8 +330,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Automate data analysis: agent writes code → agent runs → agent fixes bugs', 'Research agent auto-searches, reads papers and summarizes', 'Software dev team: planner + coder + reviewer', 'Solve complex math problems with multi-step reasoning'],
     },
     killer: {
-      vi: '💬 Conversation-driven problem solving — agents "tranh luận" cho đến khi ra kết quả đúng.',
-      en: '💬 Conversation-driven problem solving — agents "debate" until they reach the correct result.',
+      vi: 'Conversation-driven problem solving — agents "tranh luận" cho đến khi ra kết quả đúng.',
+      en: 'Conversation-driven problem solving — agents "debate" until they reach the correct result.',
     },
   },
   {
@@ -374,8 +374,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Quickly create prototype for customer demos', 'Automate repetitive programming tasks', 'Learn system architecture through examples', 'Generate boilerplate code with full structure'],
     },
     killer: {
-      vi: '🏢 Một mình bạn + MetaGPT = cả team phần mềm. Từ ý tưởng ra code chạy được trong vài phút.',
-      en: '🏢 You alone + MetaGPT = entire software team. From idea to running code in minutes.',
+      vi: 'Một mình bạn + MetaGPT = cả team phần mềm. Từ ý tưởng ra code chạy được trong vài phút.',
+      en: 'You alone + MetaGPT = entire software team. From idea to running code in minutes.',
     },
   },
   {
@@ -462,8 +462,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['AI agent auto-checks email → classifies → auto-replies', 'Sync data between CRM, database, Google Sheets with AI transform', 'Telegram/Slack chatbot connected to internal RAG', 'Auto report pipeline: fetch data → AI analyze → send email'],
     },
     killer: {
-      vi: '🔌 400+ integrations + AI nodes = tự động hóa mọi thứ có thể tưởng tượng, không giới hạn.',
-      en: '🔌 400+ integrations + AI nodes = automate anything imaginable, no limits.',
+      vi: '400+ integrations + AI nodes = tự động hóa mọi thứ có thể tưởng tượng, không giới hạn.',
+      en: '400+ integrations + AI nodes = automate anything imaginable, no limits.',
     },
   },
   {
@@ -506,8 +506,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Refactor large codebases: understands full context before editing', 'Debug complex multi-file errors', 'Write unit tests for entire modules', 'Implement new features from spec to working code'],
     },
     killer: {
-      vi: '💻 Không phải Copilot — là AI biết TOÀN BỘ codebase và tự làm từ đầu đến cuối không cần giám sát.',
-      en: '💻 Not Copilot — an AI that knows your ENTIRE codebase and works end-to-end without supervision.',
+      vi: 'Không phải Copilot — là AI biết TOÀN BỘ codebase và tự làm từ đầu đến cuối không cần giám sát.',
+      en: 'Not Copilot — an AI that knows your ENTIRE codebase and works end-to-end without supervision.',
     },
   },
   {
@@ -594,8 +594,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['Auto-research: search, read, synthesize on any topic', 'Automate complex multi-step business tasks', 'Learn how AI agent architecture works', 'Quickly prototype agentic workflows'],
     },
     killer: {
-      vi: '🌍 Project đã thay đổi cả ngành AI — chứng minh LLM có thể làm việc tự chủ mà không cần human-in-the-loop.',
-      en: '🌍 The project that changed the entire AI industry — proved LLMs can work autonomously without human-in-the-loop.',
+      vi: 'Project đã thay đổi cả ngành AI — chứng minh LLM có thể làm việc tự chủ mà không cần human-in-the-loop.',
+      en: 'The project that changed the entire AI industry — proved LLMs can work autonomously without human-in-the-loop.',
     },
   },
   {
@@ -638,8 +638,8 @@ export const githubRepos: GitHubRepo[] = [
       en: ['High-accuracy Q&A chatbot on contracts/law/regulations', 'Internal knowledge base for HR, legal, finance', 'Financial report analysis with table understanding', 'Customer support from complex technical documentation'],
     },
     killer: {
-      vi: '📄 Hiểu bảng biểu và hình ảnh trong PDF — RAG khác biệt so với 99% tools chỉ đọc text thô.',
-      en: '📄 Understands tables and images in PDFs — RAG that differs from 99% of tools that only read raw text.',
+      vi: 'Hiểu bảng biểu và hình ảnh trong PDF — RAG khác biệt so với 99% tools chỉ đọc text thô.',
+      en: 'Understands tables and images in PDFs — RAG that differs from 99% of tools that only read raw text.',
     },
   },
 ]
@@ -786,7 +786,7 @@ export interface AITip {
 export const aiTips: AITip[] = [
   {
     id: 'context-first',
-    icon: '🎯',
+    icon: '',
     color: '#6366f1',
     title: { vi: 'Context trước, câu hỏi sau', en: 'Context first, question second' },
     body: {
@@ -797,7 +797,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'role-play',
-    icon: '🎭',
+    icon: '',
     color: '#8b5cf6',
     title: { vi: 'Gán role cụ thể cho AI', en: 'Assign a specific role to AI' },
     body: {
@@ -808,7 +808,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'few-shot',
-    icon: '📋',
+    icon: '',
     color: '#10b981',
     title: { vi: 'Few-shot: cho ví dụ mẫu', en: 'Few-shot: give example outputs' },
     body: {
@@ -819,7 +819,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'temperature',
-    icon: '🌡️',
+    icon: '',
     color: '#f59e0b',
     title: { vi: 'Điều chỉnh "nhiệt độ" theo task', en: 'Adjust temperature by task' },
     body: {
@@ -830,7 +830,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'chain-prompts',
-    icon: '⛓️',
+    icon: 'pipeline',
     color: '#06b6d4',
     title: { vi: 'Chain prompts thay vì mega-prompt', en: 'Chain prompts instead of mega-prompts' },
     body: {
@@ -841,7 +841,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'xml-structure',
-    icon: '🏗️',
+    icon: '',
     color: '#ec4899',
     title: { vi: 'Dùng XML tags để cấu trúc prompt (với Claude)', en: 'Use XML tags to structure prompts (with Claude)' },
     body: {
@@ -852,7 +852,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'verify-output',
-    icon: '🔍',
+    icon: '',
     color: '#f97316',
     title: { vi: 'Luôn verify — AI tự tin nhưng có thể sai', en: 'Always verify — AI is confident but can be wrong' },
     body: {
@@ -863,7 +863,7 @@ export const aiTips: AITip[] = [
   },
   {
     id: 'system-prompt',
-    icon: '⚙️',
+    icon: 'settings',
     color: '#14b8a6',
     title: { vi: 'System prompt = DNA của AI của bạn', en: 'System prompt = your AI\'s DNA' },
     body: {

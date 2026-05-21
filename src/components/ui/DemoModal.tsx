@@ -60,7 +60,9 @@ export function DemoModal({ open, onClose }: DemoModalProps) {
 
         {submitted ? (
           <div className="py-8 text-center">
-            <div className="mb-4 text-4xl">🎉</div>
+            <div className="mb-4 flex h-14 w-14 mx-auto items-center justify-center rounded-full" style={{ background: 'rgba(99,102,241,0.15)' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
             <p className="text-lg font-medium text-white">{t.demo.success}</p>
           </div>
         ) : (

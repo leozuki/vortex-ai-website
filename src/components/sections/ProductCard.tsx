@@ -111,10 +111,20 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Body */}
       <div className="relative z-10 flex flex-1 flex-col p-5 pt-4">
         {/* Product identifier */}
-        <div className="mb-2 flex items-center gap-1.5">
-          <ProductIcon type={product.visual as VisualType} color={product.color} size={13} />
+        <div className="mb-3 flex items-center gap-3">
+          <div
+            className="flex items-center justify-center rounded-xl shrink-0"
+            style={{
+              width: 40, height: 40,
+              background: `linear-gradient(135deg, ${product.color}18 0%, ${product.color}08 100%)`,
+              border: `1px solid ${product.color}30`,
+              boxShadow: `0 0 16px ${product.color}15`,
+            }}
+          >
+            <ProductIcon type={product.visual as VisualType} color={product.color} size={22} />
+          </div>
           <span
-            className="text-[10px] font-bold uppercase tracking-[0.15em]"
+            className="text-[11px] font-bold uppercase tracking-[0.15em]"
             style={{ color: `${product.color}cc` }}
           >
             {product.name}

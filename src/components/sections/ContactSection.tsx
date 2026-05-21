@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Send, MessageSquare, Calendar, Settings2, Rocket } from 'lucide-react'
+import { Send, MessageSquare, Calendar, Settings2, Rocket, MapPin, Globe, Mail } from 'lucide-react'
 import { useLang } from '@/context/LangContext'
 import { products } from '@/data/products'
 
@@ -82,9 +82,9 @@ export function ContactSection() {
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
               <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-zinc-600">Contact</div>
               <div className="space-y-1.5 text-sm text-zinc-400">
-                <div>📍 Vietnam · Remote-ready</div>
-                <div>🌐 vortexai.vn</div>
-                <div>📬 hello@vortexai.vn</div>
+                <div className="flex items-center gap-2"><MapPin size={14} className="shrink-0" /> Vietnam · Remote-ready</div>
+                <div className="flex items-center gap-2"><Globe size={14} className="shrink-0" /> SOLAI.vn</div>
+                <div className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> hello@SOLAI.vn</div>
               </div>
             </div>
           </div>
@@ -98,10 +98,10 @@ export function ContactSection() {
               <div className="flex h-full min-h-48 items-center justify-center">
                 <div className="text-center">
                   <div
-                    className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-3xl"
+                    className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
                     style={{ background: 'rgba(16,185,129,0.15)' }}
                   >
-                    ✅
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <p className="text-lg font-bold text-white">{t.contact.form.success}</p>
                 </div>

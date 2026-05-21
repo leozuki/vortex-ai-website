@@ -9,16 +9,16 @@ export const vi: Translations = {
   },
   hero: {
     taglines: [
-      'Tự động hóa. Thông minh hóa. Bứt phá.',
-      'AI không chỉ là công cụ — là đội nhóm.',
-      'Từ ý tưởng đến sản phẩm, nhanh hơn bao giờ.',
-      'Doanh nghiệp của bạn, được khuếch đại bởi AI.',
+      'Báo cáo tự viết. Quy trình tự chạy. Bạn lo việc quan trọng hơn.',
+      'Nhân sự ít hơn. Năng suất cao hơn. Chi phí vận hành thấp hơn.',
+      'Hàng nghìn giờ thủ công mỗi tháng — biến mất.',
+      'Tăng trưởng không cần tuyển thêm người.',
     ],
     subheading:
-      'Chúng tôi xây dựng phần mềm AI thực sự — không phải demo, không phải prototype. Những sản phẩm đang chạy production, tạo doanh thu và tiết kiệm hàng nghìn giờ công mỗi năm.',
-    ctaProducts: 'Khám phá sản phẩm',
-    ctaDemo: 'Nói chuyện với chúng tôi',
-    badge: 'Đã triển khai 9 sản phẩm AI cho doanh nghiệp',
+      'Mỗi ngày đội ngũ của bạn mất hàng giờ vào việc lặp lại: nhập liệu, gửi báo cáo, theo dõi khách hàng, duyệt quy trình. Chúng tôi tự động hóa đúng những việc đó — để người giỏi tập trung vào việc người giỏi mới làm được.',
+    ctaProducts: 'Xem những bài toán đã giải',
+    ctaDemo: 'Kể cho chúng tôi nghe bài toán của bạn',
+    badge: '9 sản phẩm đang chạy thật tại doanh nghiệp Việt',
   },
   stats: {
     products: 'Sản phẩm live',
@@ -27,9 +27,9 @@ export const vi: Translations = {
     clients: 'Khách hàng',
   },
   products: {
-    heading: 'Những gì chúng tôi đã xây dựng',
+    heading: 'Những bài toán đã được giải',
     subheading:
-      'Mỗi sản phẩm là câu trả lời cho một bài toán thực tế. Không có buzzword, chỉ có kết quả.',
+      'Đây là những gì khách hàng của chúng tôi đã ngừng làm thủ công — và bắt đầu tăng trưởng nhanh hơn.',
     featuredLabel: 'Flagship',
     learnMore: 'Tìm hiểu thêm',
     categories: {
@@ -45,14 +45,14 @@ export const vi: Translations = {
     },
   },
   contact: {
-    heading: 'Bắt đầu ngay hôm nay',
+    heading: 'Kể cho chúng tôi nghe bài toán của bạn',
     subheading:
-      'Một cuộc gọi 30 phút có thể thay đổi cách doanh nghiệp bạn vận hành mãi mãi.',
+      '30 phút — chúng tôi chỉ ra cụ thể phần nào trong quy trình có thể tự động hóa được và tiết kiệm bao nhiêu giờ mỗi tuần.',
     valueProps: [
-      'Tư vấn miễn phí, không ràng buộc — chúng tôi nghe trước, đề xuất sau.',
-      'Demo trực tiếp sản phẩm phù hợp với ngành của bạn.',
-      'Roadmap triển khai rõ ràng từ ngày đầu tiên.',
-      'Hỗ trợ toàn diện, từ setup đến scale-up.',
+      'Bạn mô tả quy trình — chúng tôi nói thẳng phần nào tự động hóa được và tiết kiệm bao nhiêu.',
+      'Demo thật với kịch bản sát ngành của bạn — không phải slide giới thiệu chung chung.',
+      'Triển khai trong tuần, không phải tháng. Kết quả đo được ngay khi go-live.',
+      'Đội kỹ thuật hỗ trợ trực tiếp — không chatbot, không ticket, không chờ 3 ngày.',
     ],
     form: {
       name: 'Họ và tên',
@@ -68,20 +68,20 @@ export const vi: Translations = {
   },
   footer: {
     tagline: 'Tự động hóa. Thông minh hóa. Bứt phá.',
-    copyright: '© 2025 Vortex AI. Bảo lưu mọi quyền.',
+    copyright: '© 2025 SOLAI. Bảo lưu mọi quyền.',
     links: {
       products: 'Sản phẩm',
       contact: 'Liên hệ',
     },
   },
   demo: {
-    title: 'Đặt Demo Miễn Phí',
-    subheading: 'Xem sản phẩm chạy thực tế. Không cam kết, không áp lực.',
+    title: 'Chọn bài toán — xem giải pháp thật',
+    subheading: 'Mô tả quy trình bạn muốn tự động hóa. Chúng tôi demo đúng cái đó, không lòng vòng.',
     name: 'Họ và tên',
     email: 'Email',
     productInterest: 'Bạn muốn demo sản phẩm nào?',
     submit: 'Đặt lịch ngay',
     submitting: 'Đang gửi...',
-    success: '🎉 Đã nhận! Chúng tôi sẽ liên hệ sớm để sắp xếp lịch.',
+    success: 'Đã nhận! Chúng tôi sẽ liên hệ sớm để sắp xếp lịch.',
   },
 }

@@ -13,7 +13,7 @@ export interface Solution {
 export const solutions: Solution[] = [
   {
     id: 'sales',
-    icon: '📈',
+    icon: 'trend',
     color: '#10b981',
     industry: { vi: 'Đội sales & CRM', en: 'Sales & CRM teams' },
     headline: { vi: 'Đóng nhiều deal hơn, làm việc ít hơn', en: 'Close more deals, do less work' },
@@ -34,7 +34,7 @@ export const solutions: Solution[] = [
   },
   {
     id: 'marketing',
-    icon: '🎯',
+    icon: 'cursor',
     color: '#6366f1',
     industry: { vi: 'Marketing & quảng cáo', en: 'Marketing & advertising' },
     headline: { vi: 'AI làm content, bạn làm chiến lược', en: 'AI makes content, you make strategy' },
@@ -55,7 +55,7 @@ export const solutions: Solution[] = [
   },
   {
     id: 'ops',
-    icon: '⚙️',
+    icon: 'settings',
     color: '#f59e0b',
     industry: { vi: 'Vận hành & IT', en: 'Operations & IT' },
     headline: { vi: 'Hạ tầng tự chăm sóc bản thân', en: 'Infrastructure that takes care of itself' },
@@ -76,7 +76,7 @@ export const solutions: Solution[] = [
   },
   {
     id: 'ai-team',
-    icon: '🤖',
+    icon: 'robot',
     color: '#8b5cf6',
     industry: { vi: 'Doanh nghiệp muốn dùng AI', en: 'Businesses adopting AI' },
     headline: { vi: 'Đội AI sẵn sàng — không cần thuê thêm người', en: 'AI team ready to go — no new hires needed' },
