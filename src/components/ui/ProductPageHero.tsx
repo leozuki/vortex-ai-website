@@ -15,11 +15,13 @@ function StageCanvas({ color }: { color: string }) {
     const ctx = canvas.getContext('2d')!
     let raf: number
 
-    const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
     resize()
     window.addEventListener('resize', resize)
 
-    // Blobs
     const blobs = Array.from({ length: 4 }, (_, i) => ({
       x: canvas.width * (0.2 + i * 0.22),
       y: canvas.height * (0.3 + (i % 2) * 0.35),
@@ -29,7 +31,6 @@ function StageCanvas({ color }: { color: string }) {
       phase: i * Math.PI * 0.5,
     }))
 
-    // Particles
     const pts = Array.from({ length: 60 }, () => ({
       x: Math.random() * 1920,
       y: Math.random() * 1080,
@@ -50,7 +51,6 @@ function StageCanvas({ color }: { color: string }) {
       ctx.clearRect(0, 0, W, H)
       t += 0.005
 
-      // Blobs
       blobs.forEach((b, i) => {
         b.x += Math.sin(t + b.phase) * 0.6 + b.vx
         b.y += Math.cos(t * 0.7 + b.phase) * 0.5 + b.vy
@@ -69,7 +69,6 @@ function StageCanvas({ color }: { color: string }) {
         ctx.fill()
       })
 
-      // Particles
       pts.forEach(p => {
         p.x += p.vx; p.y += p.vy
         if (p.x < 0) p.x = W; if (p.x > W) p.x = 0
@@ -80,7 +79,6 @@ function StageCanvas({ color }: { color: string }) {
         ctx.fill()
       })
 
-      // Faint horizontal scan line
       const scanY = ((t * 60) % H)
       const sg = ctx.createLinearGradient(0, scanY - 80, 0, scanY + 80)
       sg.addColorStop(0, hex(0))
@@ -101,19 +99,33 @@ function StageCanvas({ color }: { color: string }) {
 /* ─── Letter-by-letter reveal ────────────────────────────── */
 function SplitReveal({ text, color, delay = 0 }: { text: string; color: string; delay?: number }) {
   const [go, setGo] = useState(false)
-  useEffect(() => { const t = setTimeout(() => setGo(true), delay); return () => clearTimeout(t) }, [delay])
+  useEffect(() => {
+    const t = setTimeout(() => setGo(true), delay)
+    return () => clearTimeout(t)
+  }, [delay])
 
   return (
-    <span style={{ display: 'inline-flex', overflow: 'hidden' }}>
+    /*
+     * overflow:hidden creates the "slide up from below" mask.
+     * paddingBottom + negative marginBottom give room for descenders
+     * so they aren't clipped by the tight line-height of the parent h1.
+     */
+    <span style={{
+      display: 'inline-flex',
+      overflow: 'hidden',
+      paddingBottom: '0.18em',
+      marginBottom: '-0.18em',
+      verticalAlign: 'bottom',
+    }}>
       {text.split('').map((ch, i) => (
         <motion.span
           key={i}
-          initial={{ y: '115%', opacity: 0 }}
+          initial={{ y: '105%', opacity: 0 }}
           animate={go ? { y: '0%', opacity: 1 } : {}}
           transition={{ duration: 0.65, delay: i * 0.045, ease: [0.16, 1, 0.3, 1] }}
           style={{
             display: 'inline-block',
-            ...(ch === ' ' ? { width: '0.35em' } : {}),
+            ...(ch === ' ' ? { width: '0.3em' } : {}),
             background: `linear-gradient(180deg, #fff 0%, ${color}cc 100%)`,
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -128,9 +140,15 @@ function SplitReveal({ text, color, delay = 0 }: { text: string; color: string; 
 }
 
 /* ─── Stat card ───────────────────────────────────────────── */
-function HeroStat({ metric, label, color, delay }: { metric: string; label: string; color: string; delay: number }) {
+function HeroStat({ metric, label, color, delay }: {
+  metric: string; label: string; color: string; delay: number
+}) {
   const [show, setShow] = useState(false)
-  useEffect(() => { const t = setTimeout(() => setShow(true), delay); return () => clearTimeout(t) }, [delay])
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), delay)
+    return () => clearTimeout(t)
+  }, [delay])
+
   return (
     <motion.div
       className="liquid-glass rounded-2xl p-5 flex flex-col gap-2 min-w-[130px]"
@@ -143,7 +161,7 @@ function HeroStat({ metric, label, color, delay }: { metric: string; label: stri
         fontStyle: 'italic',
         fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
         fontWeight: 400,
-        lineHeight: 1,
+        lineHeight: 1.1,
         color,
         filter: `drop-shadow(0 0 12px ${color}60)`,
       }}>{metric}</span>
@@ -179,9 +197,11 @@ export function ProductPageHero({
   stats, tech, ctaLabel, demoLabel, backLabel, eyebrowIcon,
 }: ProductPageHeroProps) {
   const [mounted, setMounted] = useState(false)
-  useEffect(() => { const t = setTimeout(() => setMounted(true), 60); return () => clearTimeout(t) }, [])
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 60)
+    return () => clearTimeout(t)
+  }, [])
 
-  // Split product name into up to 2 lines for editorial layout
   const words = name.split(' ')
   const line1 = words[0] ?? ''
   const line2 = words.slice(1).join(' ')
@@ -193,19 +213,21 @@ export function ProductPageHero({
       className="relative overflow-hidden flex flex-col"
       style={{ minHeight: '100svh', background: '#020208' }}
     >
-      {/* ── Animated canvas ── */}
       <StageCanvas color={color} />
 
-      {/* ── Subtle dot grid ── */}
+      {/* Dot grid */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.025]"
-        style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }} />
 
-      {/* ── Corner accents ── */}
+      {/* Corner accents */}
       {[
-        { cls: 'top-0 left-0', d: 'M0 64 L0 0 L64 0', c: color },
-        { cls: 'top-0 right-0', d: 'M160 64 L160 0 L96 0', c: color },
-        { cls: 'bottom-0 left-0', d: 'M0 96 L0 160 L64 160', c: 'rgba(6,182,212,0.5)' },
-        { cls: 'bottom-0 right-0', d: 'M160 96 L160 160 L96 160', c: 'rgba(6,182,212,0.5)' },
+        { cls: 'top-0 left-0',    d: 'M0 64 L0 0 L64 0',       c: color },
+        { cls: 'top-0 right-0',   d: 'M160 64 L160 0 L96 0',   c: color },
+        { cls: 'bottom-0 left-0', d: 'M0 96 L0 160 L64 160',   c: 'rgba(6,182,212,0.5)' },
+        { cls: 'bottom-0 right-0',d: 'M160 96 L160 160 L96 160',c: 'rgba(6,182,212,0.5)' },
       ].map((a, i) => (
         <svg key={i} className={`absolute ${a.cls} pointer-events-none z-10`}
           width="160" height="160" viewBox="0 0 160 160" fill="none"
@@ -214,14 +236,14 @@ export function ProductPageHero({
         </svg>
       ))}
 
-      {/* ── Bottom rule ── */}
+      {/* Bottom rule */}
       <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
         style={{ height: 1, background: `linear-gradient(90deg, transparent, ${color}50, transparent)` }} />
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative z-10 flex flex-col flex-1 px-6 md:px-16 lg:px-20 pt-28 pb-12">
 
-        {/* ── Kicker row ── */}
+        {/* Kicker row */}
         <motion.div
           className="flex items-center justify-between mb-auto"
           initial={{ opacity: 0, y: -12 }}
@@ -235,7 +257,8 @@ export function ProductPageHero({
             {backLabel}
           </Link>
 
-          <span className="liquid-glass inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]"
+          <span
+            className="liquid-glass inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]"
             style={{ color, fontFamily: 'var(--font-barlow), sans-serif' }}>
             {eyebrowIcon}
             {category}
@@ -243,12 +266,13 @@ export function ProductPageHero({
           </span>
         </motion.div>
 
-        {/* ── Main editorial area ── */}
+        {/* Main editorial area */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12 mt-16 md:mt-0">
 
           {/* Left: big name */}
-          <div className="flex-1">
-            {/* Kicker */}
+          <div className="flex-1 min-w-0">
+
+            {/* Inline category kicker */}
             <motion.p
               className="mb-4 text-sm font-medium"
               style={{ color: `${color}90`, fontFamily: 'var(--font-barlow), sans-serif', letterSpacing: '0.06em' }}
@@ -259,18 +283,29 @@ export function ProductPageHero({
               // {category}
             </motion.p>
 
-            {/* Product name — letter by letter */}
+            {/*
+             * Product name — letter by letter.
+             * NO overflow:hidden on h1 (would clip the animated letters).
+             * lineHeight: 1 gives enough room; SplitReveal handles its own clip mask.
+             */}
             <h1 style={{
               fontFamily: 'var(--font-serif), serif',
               fontStyle: 'italic',
               fontWeight: 900,
-              fontSize: 'clamp(3.5rem, 10vw, 9rem)',
-              lineHeight: 0.88,
+              fontSize: 'clamp(3.2rem, 9vw, 8.5rem)',
+              lineHeight: 1,
               letterSpacing: '-0.04em',
-              overflow: 'hidden',
+              margin: 0,
+              padding: 0,
             }}>
-              <div><SplitReveal text={line1} color={color} delay={350} /></div>
-              {line2 && <div><SplitReveal text={line2} color={color} delay={500} /></div>}
+              <div style={{ overflow: 'visible' }}>
+                <SplitReveal text={line1} color={color} delay={350} />
+              </div>
+              {line2 && (
+                <div style={{ overflow: 'visible' }}>
+                  <SplitReveal text={line2} color={color} delay={500} />
+                </div>
+              )}
             </h1>
 
             {/* Tagline */}
@@ -325,7 +360,7 @@ export function ProductPageHero({
             </motion.div>
           </div>
 
-          {/* Right: stat cards stack */}
+          {/* Right: stat cards */}
           <div className="flex md:flex-col gap-3 flex-wrap md:flex-nowrap shrink-0">
             {stats.map((s, i) => (
               <HeroStat key={i} metric={s.metric} label={s.label} color={color} delay={800 + i * 120} />

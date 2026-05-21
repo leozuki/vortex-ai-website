@@ -66,7 +66,7 @@ function CodeGrid() {
             }}
           >
             <span style={{
-              fontFamily: 'var(--font-mono, "Fira Code", monospace)',
+              fontFamily: '"Fira Code", "Cascadia Code", "JetBrains Mono", ui-monospace, monospace',
               fontSize: 'clamp(9px, 1vw, 12px)',
               color: c.color,
               whiteSpace: 'nowrap',
