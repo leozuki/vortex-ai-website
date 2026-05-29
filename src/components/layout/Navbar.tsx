@@ -6,6 +6,7 @@ import { useLang } from '@/context/LangContext'
 import { LangToggle } from '@/components/ui/LangToggle'
 import { DemoModal } from '@/components/ui/DemoModal'
 import { VortexLogoMark, VortexWordmark } from '@/components/ui/VortexLogo'
+import Link from 'next/link'
 
 export function Navbar() {
   const { t, lang } = useLang()
@@ -41,25 +42,25 @@ export function Navbar() {
         <div className="flex items-center justify-between">
 
           {/* Left — logo circle */}
-          <a
+          <Link
             href="/"
             className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full transition-all hover:scale-105"
           >
             <VortexLogoMark size={28} />
-          </a>
+          </Link>
 
           {/* Center — pill nav (desktop) */}
           <div className="hidden md:flex items-center">
             <div className="liquid-glass flex items-center rounded-full px-1.5 py-1.5">
               {links.map(l => (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   className="rounded-full px-3.5 py-2 text-sm font-medium text-white/80 transition-all hover:text-white hover:bg-white/[0.06]"
                   style={{ fontFamily: 'var(--font-barlow), sans-serif' }}
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               <div className="mx-1 h-5 w-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
               <LangToggle />
@@ -98,7 +99,7 @@ export function Navbar() {
           >
             <div className="px-4 py-3 space-y-0.5">
               {links.map(l => (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setMenuOpen(false)}
@@ -106,7 +107,7 @@ export function Navbar() {
                   style={{ fontFamily: 'var(--font-barlow), sans-serif' }}
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-2 border-t flex items-center justify-between" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
                 <LangToggle />

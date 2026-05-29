@@ -41,3 +41,24 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# Netlify and static build outputs in the root
+.netlify/
+.nojekyll
+404.html
+404/
+__next.*
+_next/
+_not-found/
+index.html
+index.txt
+products/
+resources/
+screenshots/
+favicon.ico
+file.svg
+globe.svg
+next.svg
+vercel.svg
+window.svg
+

@@ -280,7 +280,7 @@ export function ProductPageHero({
               animate={mounted ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.25, ease }}
             >
-              // {category}
+              {"// "}{category}
             </motion.p>
 
             {/*
@@ -332,17 +332,17 @@ export function ProductPageHero({
               animate={mounted ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.9, ease }}
             >
-              <a href="/#contact"
+              <Link href="/#contact"
                 className="liquid-glass-strong inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105 active:scale-95"
                 style={{ fontFamily: 'var(--font-barlow), sans-serif', boxShadow: `0 0 28px ${color}30` }}>
                 {ctaLabel}
                 <ArrowUpRight size={14} />
-              </a>
-              <a href="/#contact"
+              </Link>
+              <Link href="/#contact"
                 className="liquid-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm text-white/35 transition-all hover:text-white/65"
                 style={{ fontFamily: 'var(--font-barlow), sans-serif' }}>
                 {demoLabel}
-              </a>
+              </Link>
             </motion.div>
 
             {/* Tech chips */}

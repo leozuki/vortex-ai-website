@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useTransform, MotionValue } from 'framer-motion'
 import { useLang } from '@/context/LangContext'
 import { DemoModal } from '@/components/ui/DemoModal'
 
@@ -288,15 +288,10 @@ export function HeroSection() {
 
   const INTEGRATIONS = ['HubSpot', 'Google', 'Facebook', 'Claude AI', 'Gemini', 'Cron', 'Zapier', 'BigQuery']
 
-  return (
-    <>
-      {/* Shimmer keyframe */}
-      <style>{`
-        @keyframes shimmer { 0%{background-position:100% 50%} 100%{background-position:-100% 50%} }
-        @keyframes ticker  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-      `}</style>
+  const sectionStyle = { minHeight: '100svh', background: '#020208' }
 
-      <section id="hero" className="relative overflow-hidden" style={{ minHeight: '100svh', background: '#020208' }}>
+  const sectionContent = (
+    <section id="hero" className="relative overflow-hidden" style={sectionStyle}>
 
         {/* ── Video BG ── */}
         <FadingVideo
@@ -554,6 +549,17 @@ export function HeroSection() {
           </svg>
         </div>
       </section>
+  )
+
+  return (
+    <>
+      {/* Shimmer keyframe */}
+      <style>{`
+        @keyframes shimmer { 0%{background-position:100% 50%} 100%{background-position:-100% 50%} }
+        @keyframes ticker  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+      `}</style>
+
+      {sectionContent}
 
       <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </>

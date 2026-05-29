@@ -23,7 +23,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem('lang') as Lang | null
     if (stored === 'vi' || stored === 'en') {
-      setLangState(stored)
+      setTimeout(() => setLangState(stored), 0)
     }
   }, [])
 

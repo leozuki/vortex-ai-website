@@ -11,7 +11,7 @@ interface DemoModalProps {
 }
 
 export function DemoModal({ open, onClose }: DemoModalProps) {
-  const { t, lang } = useLang()
+  const { t } = useLang()
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -24,7 +24,7 @@ export function DemoModal({ open, onClose }: DemoModalProps) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
-      setSubmitted(false)
+      setTimeout(() => setSubmitted(false), 0)
     } else {
       document.body.style.overflow = ''
     }

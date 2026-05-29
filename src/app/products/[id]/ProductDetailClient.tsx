@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, ChevronDown, Zap } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, Zap } from 'lucide-react'
 import { useLang } from '@/context/LangContext'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -37,10 +37,16 @@ function useCountUp(target: string, inView: boolean) {
     if (!inView) return
     // Parse: optional prefix + number + optional suffix (e.g. "<1 min", "99.8%", "24/7")
     const match = target.match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)(.*)$/)
-    if (!match) { setDisplay(target); return }
+    if (!match) {
+      requestAnimationFrame(() => setDisplay(target))
+      return
+    }
     const [, prefix, raw, suffix] = match
     const num = parseFloat(raw)
-    if (isNaN(num)) { setDisplay(target); return }
+    if (isNaN(num)) {
+      requestAnimationFrame(() => setDisplay(target))
+      return
+    }
     const start = performance.now()
     const dur = 900
     const tick = (now: number) => {
@@ -175,9 +181,6 @@ function PainCard({ p, lang, delay }: { p: PainPoint; lang: 'vi' | 'en'; delay: 
 export function ProductDetailClient({ product, detail }: Props) {
   const { lang } = useLang()
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => { setTimeout(() => setMounted(true), 60) }, [])
 
   const c = product.color
 
@@ -446,14 +449,14 @@ export function ProductDetailClient({ product, detail }: Props) {
               ))}
             </div>
 
-            <a href="/#contact"
+            <Link href="/#contact"
               className="group liquid-glass-strong relative inline-flex items-center gap-2.5 rounded-2xl px-9 py-4 text-base font-bold text-white overflow-hidden transition-all duration-300 hover:scale-[1.04] active:scale-95"
               style={{ boxShadow: `0 0 40px ${c}30` }}>
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-[inherit]"
                 style={{ background: `linear-gradient(135deg, ${c}18, transparent)` }} />
               <span className="relative">{product.cta[lang]}</span>
               <ArrowUpRight size={16} className="relative transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </FadeUp>
         </section>
 

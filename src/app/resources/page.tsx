@@ -428,8 +428,6 @@ const FILTER_OPTIONS: { key: Filter; labelVi: string; labelEn: string; count: nu
 export default function ResourcesPage() {
   const { lang } = useLang()
   const [filter, setFilter] = useState<Filter>('all')
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setTimeout(() => setMounted(true), 60) }, [])
 
   const show = (key: Filter) => filter === 'all' || filter === key
 

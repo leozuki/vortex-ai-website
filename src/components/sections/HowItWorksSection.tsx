@@ -19,23 +19,82 @@ const STEPS = {
   ],
 }
 
-export function HowItWorksSection() {
-  const { lang } = useLang()
-  const ref = useRef<HTMLDivElement>(null)
+function TimelineItem({ s, index, lang }: { s: any; index: number; lang: 'vi' | 'en' }) {
+  const itemRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true) }, { threshold: 0.1 })
-    if (ref.current) obs.observe(ref.current)
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) setInView(true)
+    }, { threshold: 0.15 })
+    if (itemRef.current) obs.observe(itemRef.current)
     return () => obs.disconnect()
   }, [])
 
+  const isEven = index % 2 === 0
+
+  return (
+    <div
+      ref={itemRef}
+      className={`relative flex flex-col md:flex-row items-center justify-between w-full mb-16 md:mb-24 last:mb-0 transition-all duration-700 ${
+        inView ? 'opacity-100 translate-y-0 filter-none' : 'opacity-0 translate-y-8 blur-sm'
+      }`}
+      style={{ transitionDelay: `${index * 80}ms` }}
+    >
+      {/* Spacer or Left Card */}
+      <div className={`w-full md:w-[45%] flex ${isEven ? 'justify-end' : 'justify-start md:order-2'}`}>
+        <div 
+          className="w-full max-w-[450px] p-6 rounded-2xl border backdrop-blur-md flex flex-col gap-3 transition-colors duration-300"
+          style={{
+            background: 'rgba(255, 255, 255, 0.015)',
+            borderColor: 'rgba(255, 255, 255, 0.04)',
+          }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+              <SemanticIcon name={s.icon} size={20} color="#22d3ee" />
+            </div>
+            <div>
+              <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest leading-none block mb-1">
+                STEP {s.n}
+              </span>
+              <h3 className="text-base font-bold text-white leading-tight">{s.title}</h3>
+            </div>
+          </div>
+          <p className="text-xs text-zinc-400 leading-relaxed pl-1">{s.desc}</p>
+        </div>
+      </div>
+
+      {/* Timeline Node Dot */}
+      <div className="absolute left-[20px] md:left-1/2 top-10 md:top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 hidden sm:flex h-8 w-8 items-center justify-center rounded-full border bg-[#020208] border-cyan-500/30 shadow-[0_0_12px_rgba(34,211,238,0.15)]">
+        <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
+      </div>
+
+      {/* Spacer for other side */}
+      <div className="hidden md:block w-[45%]" />
+    </div>
+  )
+}
+
+export function HowItWorksSection() {
+  const { lang } = useLang()
   const steps = STEPS[lang]
 
   return (
-    <section className="relative py-28 px-4" style={{ background: '#09090f' }}>
-      <div ref={ref} className="mx-auto max-w-5xl">
-        <div className="mb-14 text-center"
-          style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(20px)', transition: 'all 0.7s ease' }}>
+    <section 
+      id="how-it-works" 
+      className="relative w-full py-24 md:py-32 overflow-hidden" 
+      style={{ background: '#020208' }}
+    >
+      <div 
+        className="pointer-events-none absolute top-0 left-0 right-0 h-px z-10"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(16,185,129,0.2), transparent)' }} 
+      />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        
+        {/* Header */}
+        <div className="mb-20 text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
             {lang === 'vi' ? 'Quy trình làm việc' : 'How we work'}
           </p>
@@ -45,30 +104,19 @@ export function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Connecting line desktop */}
-          <div className="pointer-events-none absolute top-10 left-[12.5%] right-[12.5%] hidden h-px lg:block"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.3) 20%, rgba(99,102,241,0.3) 80%, transparent)' }} />
+        {/* Timeline body */}
+        <div className="relative w-full flex flex-col items-center">
+          
+          {/* Vertical center timeline line */}
+          <div className="absolute left-[20px] md:left-1/2 top-4 bottom-4 w-px bg-white/5 -translate-x-1/2" />
 
           {steps.map((s, i) => (
-            <div key={i}
-              style={{
-                opacity: inView ? 1 : 0,
-                transform: inView ? 'none' : 'translateY(28px)',
-                transition: `all 0.6s ease ${i * 100}ms`,
-              }}>
-              <div className="relative flex flex-col items-center text-center">
-                {/* Number bubble */}
-                <div className="relative mb-4 flex h-20 w-20 items-center justify-center rounded-2xl border border-indigo-500/20 bg-indigo-500/10">
-                  <SemanticIcon name={s.icon} size={28} color="#818cf8" />
-                  <div className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-[10px] font-black text-white">
-                    {s.n}
-                  </div>
-                </div>
-                <h3 className="mb-2 text-sm font-bold text-white">{s.title}</h3>
-                <p className="text-xs leading-relaxed text-zinc-500">{s.desc}</p>
-              </div>
-            </div>
+            <TimelineItem
+              key={i}
+              s={s}
+              index={i}
+              lang={lang}
+            />
           ))}
         </div>
       </div>

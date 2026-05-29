@@ -9,6 +9,7 @@ import { ProductIcon } from '@/components/ui/ProductIcon'
 
 interface ProductCardProps {
   product: Product
+  large?: boolean
 }
 
 function ArrowDiagIcon({ size = 14, color = 'currentColor' }) {
@@ -19,24 +20,51 @@ function ArrowDiagIcon({ size = 14, color = 'currentColor' }) {
   )
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, large }: ProductCardProps) {
   const { t, lang } = useLang()
   const [hovered, setHovered] = useState(false)
+  const [rotateX, setRotateX] = useState(0)
+  const [rotateY, setRotateY] = useState(0)
   const cardRef = useRef<HTMLElement>(null)
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const rect = cardRef.current?.getBoundingClientRect()
     if (!rect) return
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
-    cardRef.current!.style.setProperty('--mouse-x', `${x}%`)
-    cardRef.current!.style.setProperty('--mouse-y', `${y}%`)
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const mouseXRatio = x / rect.width - 0.5
+    const mouseYRatio = y / rect.height - 0.5
+
+    cardRef.current!.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`)
+    cardRef.current!.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`)
+
+    // Calculate sheen position for holographic reflection
+    const sheenX = (mouseXRatio + 0.5) * 100
+    const sheenY = (mouseYRatio + 0.5) * 100
+    cardRef.current!.style.setProperty('--sheen-x', `${sheenX}%`)
+    cardRef.current!.style.setProperty('--sheen-y', `${sheenY}%`)
+
+    // Limit rotation to maximum 12 degrees for refined aesthetic
+    setRotateX(-mouseYRatio * 12)
+    setRotateY(mouseXRatio * 12)
+  }
+
+  function handleMouseEnter() {
+    setHovered(true)
+    window.dispatchEvent(new CustomEvent('solaiProductHover', { detail: { id: product.id, name: product.name } }))
+  }
+
+  function handleMouseLeave() {
+    setHovered(false)
+    setRotateX(0)
+    setRotateY(0)
+    window.dispatchEvent(new CustomEvent('solaiProductHover', { detail: { id: null, name: null } }))
   }
 
   return (
     <article
       ref={cardRef}
-      className="spotlight-card group relative flex flex-col overflow-hidden rounded-2xl cursor-default select-none"
+      className="spotlight-card group relative flex flex-col h-full overflow-hidden rounded-2xl cursor-default select-none"
       style={{
         background: hovered
           ? 'linear-gradient(160deg, #14141f 0%, #0f0f1a 100%)'
@@ -47,11 +75,15 @@ export function ProductCard({ product }: ProductCardProps) {
         boxShadow: hovered
           ? `0 0 0 1px ${product.color}25, 0 20px 60px ${product.color}10, 0 4px 20px rgba(0,0,0,0.5)`
           : '0 2px 12px rgba(0,0,0,0.3)',
-        transform: hovered ? 'translateY(-5px)' : 'translateY(0)',
-        transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease',
+        transform: hovered
+          ? `perspective(1000px) translateY(-5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+          : 'perspective(1000px) translateY(0) rotateX(0deg) rotateY(0deg)',
+        transition: hovered
+          ? 'box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease'
+          : 'transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease',
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
     >
       {/* Animated top accent line */}
@@ -75,9 +107,37 @@ export function ProductCard({ product }: ProductCardProps) {
         }}
       />
 
+      {/* Holographic Refractive Sheen overlay */}
+      <div
+        className="absolute inset-0 z-[5] pointer-events-none mix-blend-color-dodge transition-opacity duration-300"
+        style={{
+          background: `linear-gradient(135deg, 
+            rgba(255, 255, 255, 0) 0%,
+            ${product.color}15 25%,
+            rgba(99, 102, 241, 0.12) 40%,
+            rgba(6, 182, 212, 0.15) 50%,
+            rgba(236, 72, 153, 0.12) 60%,
+            ${product.color}18 75%,
+            rgba(255, 255, 255, 0) 100%
+          )`,
+          backgroundSize: '250% 250%',
+          backgroundPosition: 'var(--sheen-x, 50%) var(--sheen-y, 50%)',
+          opacity: hovered ? 0.45 : 0,
+        }}
+      />
+      
+      {/* Glossy Overlay Highlight */}
+      <div
+        className="absolute inset-0 z-[6] pointer-events-none mix-blend-overlay transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.12) 0%, transparent 75%)`,
+          opacity: hovered ? 1 : 0,
+        }}
+      />
+
       {/* Visual illustration */}
       <div className="relative overflow-hidden z-10">
-        <ProductVisual type={product.visual} color={product.color} />
+        <ProductVisual type={product.visual} color={product.color} large={large} />
 
         {/* Featured pill */}
         {product.featured && (
@@ -121,7 +181,7 @@ export function ProductCard({ product }: ProductCardProps) {
               boxShadow: `0 0 16px ${product.color}15`,
             }}
           >
-            <ProductIcon type={product.visual as VisualType} color={product.color} size={22} />
+            <ProductIcon type={product.visual as VisualType} color={product.color} size={22} hovered={hovered} />
           </div>
           <span
             className="text-[11px] font-bold uppercase tracking-[0.15em]"

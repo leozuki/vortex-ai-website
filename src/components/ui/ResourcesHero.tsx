@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 /* ─── Animated grid of fading code snippets ─────────────── */
@@ -38,7 +38,10 @@ function CodeGrid() {
       color: colors[Math.floor(Math.random() * colors.length)],
     }))
 
-    setCells(make())
+    // Defer state update to next frame to avoid synchronous setState inside useEffect warning
+    const timer = setTimeout(() => {
+      setCells(make())
+    }, 0)
 
     const interval = setInterval(() => {
       setCells(prev => prev.map(c =>
@@ -48,7 +51,10 @@ function CodeGrid() {
       ))
     }, 800)
 
-    return () => clearInterval(interval)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(interval)
+    }
   }, [])
 
   return (

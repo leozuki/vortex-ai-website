@@ -535,6 +535,11 @@ function DmsMockup({ color }: { color: string }) {
   )
 }
 
+const STATIC_WAVE_DATA = Array.from({ length: 40 }, (_, i) => {
+  const pseudoRandom = (Math.sin(i * 9.8) + 1) / 2
+  return Math.sin(i * 0.4) * 0.4 + pseudoRandom * 0.6
+})
+
 function TranscriptMockup({ color }: { color: string }) {
   const lines = [
     { time: '00:00', speaker: 'Minh', text: 'Chào mọi người. Hôm nay chúng ta họp về kế hoạch Q1 2025.' },
@@ -543,7 +548,7 @@ function TranscriptMockup({ color }: { color: string }) {
     { time: '00:41', speaker: 'Nam', text: 'Doanh thu Q4 đạt 8.2 tỷ, vượt KPI 12%. Chi phí giảm 8% nhờ automation.' },
     { time: '01:03', speaker: 'Lan', text: 'Tuyệt vời. Q1 target chúng ta đặt là 10 tỷ, tăng 22% so với Q4.' },
   ]
-  const waveData = Array.from({ length: 40 }, (_, i) => Math.sin(i * 0.4) * 0.4 + Math.random() * 0.6)
+  const waveData = STATIC_WAVE_DATA
   return (
     <MockupShell color={color} title="VideoKL — Transcript & Meeting Minutes">
       <div style={{ display: 'flex', height: 340 }}>

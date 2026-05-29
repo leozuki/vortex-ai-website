@@ -4,15 +4,16 @@ import { useEffect, useRef, useState } from 'react'
 import { useLang } from '@/context/LangContext'
 import { products } from '@/data/products'
 import { ProductCard } from './ProductCard'
+import { TechTicker } from './TechTicker'
 
-function AnimatedCard({ children, index }: { children: React.ReactNode; index: number }) {
+function AnimatedCard({ children, index, className }: { children: React.ReactNode; index: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) setInView(true) },
-      { threshold: 0.06 }
+      { threshold: 0.05 }
     )
     if (ref.current) obs.observe(ref.current)
     return () => obs.disconnect()
@@ -21,13 +22,14 @@ function AnimatedCard({ children, index }: { children: React.ReactNode; index: n
   return (
     <div
       ref={ref}
+      className={`${className || ''} h-full flex flex-col`}
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0) scale(1)' : 'translateY(32px) scale(0.97)',
         filter: inView ? 'blur(0px)' : 'blur(4px)',
-        transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms,
-                     transform 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms,
-                     filter 0.5s ease ${index * 60}ms`,
+        transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 80}ms,
+                     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 80}ms,
+                     filter 0.6s ease ${index * 80}ms`,
       }}
     >
       {children}
@@ -35,14 +37,13 @@ function AnimatedCard({ children, index }: { children: React.ReactNode; index: n
   )
 }
 
-/* Section heading with inline badge */
 function SectionHeading() {
   const { t } = useLang()
   const ref = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true) }, { threshold: 0.3 })
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true) }, { threshold: 0.2 })
     if (ref.current) obs.observe(ref.current)
     return () => obs.disconnect()
   }, [])
@@ -54,10 +55,9 @@ function SectionHeading() {
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(24px)',
-        transition: 'opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)',
+        transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
       }}
     >
-      {/* Label chip */}
       <div className="mb-4 flex justify-center">
         <span
           className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em]"
@@ -74,7 +74,6 @@ function SectionHeading() {
         </span>
       </div>
 
-      {/* Main headline */}
       <h2
         className="mb-4 font-black leading-tight tracking-tight text-white"
         style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
@@ -99,52 +98,67 @@ function SectionHeading() {
   )
 }
 
-export function ProductsGrid() {
-  const featured = products.filter((p) => p.featured)
-  const others = products.filter((p) => !p.featured)
+function getBentoSpan(id: string) {
+  switch (id) {
+    case 'digital-office':
+      return 'md:col-span-2 md:row-span-2'
+    case 'bigdata-pipeline':
+      return 'md:col-span-1 md:row-span-2'
+    case 'crm':
+      return 'md:col-span-2 md:row-span-1'
+    case 'web-fleet':
+      return 'md:col-span-1 md:row-span-1'
+    case 'taomeettrap':
+      return 'md:col-span-1 md:row-span-1'
+    case 'extensions-suite':
+      return 'md:col-span-2 md:row-span-1'
+    case 'hubspot-auto':
+      return 'md:col-span-1 md:row-span-1'
+    case 'arcso':
+      return 'md:col-span-1 md:row-span-1'
+    case 'dms':
+      return 'md:col-span-1 md:row-span-1'
+    case 'video-transcript':
+      return 'md:col-span-2 md:row-span-1'
+    case 'ads-portal':
+      return 'md:col-span-1 md:row-span-1'
+    default:
+      return 'md:col-span-1 md:row-span-1'
+  }
+}
 
+export function ProductsGrid() {
   return (
     <section
       id="products"
-      className="relative py-28 px-4"
-      style={{ background: '#07070e' }}
+      className="relative w-full py-24 md:py-32 overflow-hidden"
+      style={{ background: '#020208' }}
     >
-      {/* Top edge glow */}
+      {/* Top divider light line */}
       <div
-        className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.35), transparent)' }}
+        className="pointer-events-none absolute top-0 left-0 right-0 h-px z-10"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.2), transparent)' }}
       />
 
-      {/* Faint radial glow center */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          width: 900, height: 500,
-          background: 'radial-gradient(ellipse, rgba(99,102,241,0.035) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
         <SectionHeading />
 
-        {/* Featured — 3 col */}
-        <div className="mb-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((product, i) => (
-            <AnimatedCard key={product.id} index={i}>
-              <ProductCard product={product} />
-            </AnimatedCard>
-          ))}
+        {/* Clean Static Bento Grid */}
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3 auto-rows-[minmax(280px,_auto)]">
+          {products.map((product, i) => {
+            const bentoSpan = getBentoSpan(product.id)
+            return (
+              <AnimatedCard key={product.id} index={i} className={bentoSpan}>
+                <ProductCard product={product} large={product.id === 'digital-office'} />
+              </AnimatedCard>
+            )
+          })}
         </div>
+      </div>
 
-        {/* Others — 3 col */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {others.map((product, i) => (
-            <AnimatedCard key={product.id} index={featured.length + i}>
-              <ProductCard product={product} />
-            </AnimatedCard>
-          ))}
-        </div>
+      {/* Tech Ticker at the bottom */}
+      <div className="mt-20">
+        <TechTicker />
       </div>
     </section>
   )
